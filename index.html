@@ -1,33 +1,481 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lions Med Company — Product Catalogue 2026</title>
-  <meta name="description" content="Lions Med Company Product Catalogue 2026">
+  <title>Lions Med Company — Poultry Health & Nutrition</title>
+  <meta name="description" content="Lions Med Company — anticoccidials, gut-health actives and mineral feed additives for poultry. Emistop Premix Vet, Madumix Vet, Echomos, Imerys BZF, PGB Premix, Extra Yeast. Mansoura, Egypt.">
+  <meta property="og:title" content="Lions Med Company — Product Catalogue 2026">
+  <meta property="og:description" content="Anticoccidials, gut-health actives and mineral feed additives for poultry.">
+  <meta property="og:image" content="https://egyone1.github.io/lions-med-catalogue/assets/hero.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; background: #111; }
-    body { font-family: Arial, Helvetica, sans-serif; }
-    .catalogue { width: 100%; }
-    .page { display: block; width: 100%; max-width: 1120px; margin: 0 auto; line-height: 0; background: #fff; }
-    .page img { display: block; width: 100%; height: auto; }
-    @media (min-width: 1200px) {
-      body { background: #d9d9d9; }
-      .page { box-shadow: 0 0 18px rgba(0,0,0,.18); }
+    :root {
+      --navy: #0d1b2e; --navy-2: #16263f; --navy-3: #1c273a;
+      --gold: #b8933a; --gold-soft: #e8e1cf;
+      --paper: #f2f0ec; --card: #fff; --ink: #1c273a; --muted: #6b7280; --line: #dcd8cf;
     }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Poppins, Arial, sans-serif; font-size: 16px; line-height: 1.65; }
+    html[lang="ar"] body { font-family: Cairo, Tahoma, Arial, sans-serif; line-height: 1.85; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { line-height: 1.2; margin: 0; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+    .eyebrow { color: var(--gold); font-size: .78rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; }
+    html[lang="ar"] .eyebrow { letter-spacing: 0; font-size: .9rem; }
+
+    /* header */
+    header { position: sticky; top: 0; z-index: 10; background: var(--navy); color: #fff; border-bottom: 3px solid var(--gold); }
+    .bar { display: flex; align-items: center; gap: 16px; min-height: 60px; }
+    .brand { font-weight: 700; font-size: 1.1rem; text-decoration: none; white-space: nowrap; letter-spacing: .02em; }
+    .brand span { color: var(--gold); }
+    nav { display: flex; gap: 22px; margin-inline-start: auto; }
+    nav a { text-decoration: none; font-size: .92rem; opacity: .85; }
+    nav a:hover { opacity: 1; color: var(--gold); }
+    .lang { margin-inline-start: 8px; background: none; border: 1px solid var(--gold); color: var(--gold); border-radius: 6px; padding: 6px 12px; font: inherit; font-size: .88rem; font-weight: 600; cursor: pointer; }
+    .lang:hover { background: var(--gold); color: var(--navy); }
+    @media (max-width: 760px) { nav { display: none; } .lang { margin-inline-start: auto; } }
+
+    /* hero */
+    .hero { background: var(--navy); color: #fff; }
+    .hero-img { width: 100%; height: min(520px, 87.3vw); object-fit: cover; object-position: 50% 62%; border-bottom: 4px solid var(--gold); }
+    .hero-body { padding: 48px 0 56px; }
+    .hero h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 700; margin: 14px 0 16px; }
+    .hero h1 em { display: block; font-style: normal; color: var(--gold); }
+    .hero p { max-width: 640px; font-size: 1.08rem; opacity: .9; margin: 0 0 28px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 8px; font-weight: 600; text-decoration: none; border: 1px solid transparent; }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+    .btn-wa { background: #1fa855; color: #fff; }
+    .btn-line { border-color: rgba(255,255,255,.4); color: #fff; }
+    .btn-navy { background: var(--navy-3); color: #fff; }
+    .btn:hover { filter: brightness(1.08); }
+
+    /* sections */
+    section { padding: 56px 0; }
+    .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-bottom: 2px solid var(--navy-3); padding-bottom: 12px; margin-bottom: 24px; }
+    .sec-head h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; }
+    .group + .group { margin-top: 48px; }
+
+    /* product cards */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .card { background: var(--card); border-inline-start: 5px solid var(--gold); box-shadow: 0 1px 3px rgba(0,0,0,.08); padding: 22px; display: flex; flex-direction: column; text-decoration: none; transition: transform .15s, box-shadow .15s; }
+    a.card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(13,27,46,.14); }
+    .card .ph { height: 190px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .card .ph img { max-height: 190px; width: auto; }
+    .card h3 { font-size: 1.35rem; font-weight: 700; }
+    .card .sub { color: var(--gold); font-weight: 500; margin: 4px 0 14px; }
+    .card .foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 14px; }
+    .pill { background: var(--navy-3); color: #fff; border-radius: 6px; padding: 7px 12px; font-weight: 600; font-size: .92rem; white-space: nowrap; }
+    .more { color: var(--gold); font-weight: 700; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; }
+    html[lang="ar"] .more { letter-spacing: 0; font-size: .92rem; }
+    .label { color: var(--muted); font-size: .72rem; font-weight: 600; letter-spacing: .24em; text-transform: uppercase; margin: 0 0 4px; }
+    html[lang="ar"] .label { letter-spacing: 0; font-size: .85rem; }
+    .comp { list-style: none; margin: 0; padding: 0; font-size: .96rem; }
+    .comp b { font-weight: 700; }
+    .note { background: var(--gold-soft); border-inline-start: 5px solid var(--gold); padding: 22px 26px; margin-top: 28px; }
+    .note p { margin: 6px 0 0; }
+    .quote { text-align: center; font-style: italic; font-size: 1.2rem; max-width: 560px; margin: 40px auto 0; }
+    .quote::after { content: ""; display: block; width: 70px; height: 2px; background: var(--gold); margin: 20px auto 0; }
+
+    /* dark blocks */
+    .dark { background: var(--navy); color: #fff; }
+    .dark .sec-head { border-color: rgba(255,255,255,.2); }
+    .dark h2.big { font-size: clamp(1.7rem, 5vw, 2.6rem); max-width: 620px; margin: 10px 0 18px; }
+    .dark .lead { max-width: 860px; opacity: .9; margin: 0 0 30px; }
+    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+    .tile { background: var(--navy-2); border-top: 3px solid var(--gold); padding: 22px 24px; }
+    .tile h3 { font-size: 1.1rem; margin-bottom: 8px; }
+    .tile p { margin: 0; opacity: .85; font-size: .95rem; }
+    .cycle { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 18px; }
+    .step { border-top: 1px solid rgba(255,255,255,.2); padding-top: 16px; position: relative; }
+    .step::before { content: ""; position: absolute; top: -2px; inset-inline-start: 0; width: 48px; height: 3px; background: var(--gold); }
+    .step h3 { font-size: 1.1rem; } .step h3 span { color: var(--gold); margin-inline-end: 12px; }
+    .step small { display: block; opacity: .75; margin: 6px 0; }
+    .step p { margin: 0; opacity: .9; font-size: .95rem; }
+    .logos { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+    .logos div { background: #fff; border-radius: 10px; padding: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--line); }
+    .logos img { height: 62px; width: auto; }
+
+    /* contact */
+    .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+    .contact .tile a { color: #fff; font-size: 1.25rem; font-weight: 600; text-decoration: none; direction: ltr; unicode-bidi: embed; }
+    .contact .tile a:hover { color: var(--gold); }
+    footer { background: var(--navy); color: rgba(255,255,255,.6); font-size: .82rem; padding: 22px 0 30px; border-top: 1px solid rgba(255,255,255,.15); }
+    footer .wrap { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; }
+    footer a { color: var(--gold); }
+    .fab { position: fixed; bottom: 18px; inset-inline-end: 18px; z-index: 20; width: 56px; height: 56px; border-radius: 50%; background: #1fa855; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,.3); }
+    .fab svg, .btn svg { width: 22px; height: 22px; fill: currentColor; flex: none; }
+    .fab svg { width: 30px; height: 30px; fill: #fff; }
+
+    /* product page */
+    .back { display: inline-block; margin: 26px 0 6px; color: var(--gold); font-weight: 600; text-decoration: none; }
+    .p-head { background: var(--card); border-inline-start: 5px solid var(--gold); box-shadow: 0 1px 3px rgba(0,0,0,.08); padding: 30px; display: grid; grid-template-columns: 280px 1fr; gap: 30px; align-items: center; }
+    .p-head .ph { display: flex; justify-content: center; }
+    .p-head .ph img { max-height: 320px; width: auto; }
+    .p-head h2 { font-size: clamp(1.3rem, 3.4vw, 1.8rem); font-weight: 500; margin: 8px 0 20px; }
+    .p-head .comp { font-size: 1.1rem; margin-bottom: 22px; }
+    .boxes { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+    .box { background: var(--navy-3); color: #fff; border-radius: 8px; padding: 14px 18px; }
+    .box small { display: block; color: var(--gold); font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+    html[lang="ar"] .box small { letter-spacing: 0; font-size: .82rem; }
+    .box b { font-size: 1.3rem; }
+    .p-cols { columns: 2; column-gap: 56px; margin-top: 34px; }
+    .p-sec { break-inside: avoid; margin-bottom: 30px; }
+    .p-sec h3 { color: var(--gold); font-size: .8rem; font-weight: 700; letter-spacing: .26em; text-transform: uppercase; border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 14px; }
+    html[lang="ar"] .p-sec h3 { letter-spacing: 0; font-size: 1rem; }
+    .p-sec p { margin: 0 0 10px; }
+    .p-sec ul { margin: 0; padding: 0; list-style: none; }
+    .p-sec li { position: relative; padding-inline-start: 22px; margin-bottom: 10px; }
+    .p-sec li::before { content: ""; position: absolute; inset-inline-start: 2px; top: .72em; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+    .admin { background: var(--navy-3); color: #fff; border-radius: 10px; padding: 26px 30px; margin-top: 10px; }
+    .admin h3 { color: var(--gold); font-size: .8rem; letter-spacing: .26em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,.2); padding-bottom: 12px; margin-bottom: 16px; }
+    html[lang="ar"] .admin h3 { letter-spacing: 0; font-size: 1rem; }
+    .admin .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+    .admin b { display: block; color: var(--gold); }
+    .p-cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 0; }
+    .p-page { padding-bottom: 60px; }
+    .p-page h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
+    @media (max-width: 760px) { .p-head { grid-template-columns: 1fr; padding: 22px; } .p-cols { columns: 1; } .p-head .ph img { max-height: 240px; } }
   </style>
 </head>
 <body>
-  <main class="catalogue" aria-label="Lions Med Company Product Catalogue 2026">
-    <div class="page"><img src="pages/page-1.jpg" alt="Lions Med Company Product Catalogue 2026 — cover" loading="eager"></div>
-    <div class="page"><img src="pages/page-2.jpg" alt="Anticoccidials & Gut Health" loading="lazy"></div>
-    <div class="page"><img src="pages/page-3.jpg" alt="Minerals & Probiotics" loading="lazy"></div>
-    <div class="page"><img src="pages/page-4.jpg" alt="Emistop Premix Vet — Product Data Sheet" loading="lazy"></div>
-    <div class="page"><img src="pages/page-5.jpg" alt="Madumix Vet — Product Data Sheet" loading="lazy"></div>
-    <div class="page"><img src="pages/page-6.jpg" alt="Echomos — Product Data Sheet" loading="lazy"></div>
-    <div class="page"><img src="pages/page-7.jpg" alt="Extra Yeast — Product Data Sheet" loading="lazy"></div>
-    <div class="page"><img src="pages/page-8.jpg" alt="Lions Med Company — Poultry Feed information" loading="lazy"></div>
-  </main>
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="#/">LIONS MED <span>COMPANY</span></a>
+      <nav id="nav"></nav>
+      <button class="lang" id="lang" type="button"></button>
+    </div>
+  </header>
+  <main id="app"></main>
+  <noscript><div class="wrap" style="padding:40px 20px"><a href="catalogue.html">Open the product catalogue</a></div></noscript>
+  <footer><div class="wrap" id="foot"></div></footer>
+  <a class="fab" id="fab" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.500 1.700 6.500L3 29l6.700-1.700c1.900 1 4.100 1.600 6.300 1.600 7.200 0 13-5.800 13-13S23.200 3 16 3zm0 23.600c-2 0-3.900-.5-5.600-1.500l-.4-.2-4 1 1.100-3.900-.3-.4c-1.100-1.700-1.600-3.600-1.600-5.600C5.200 10 10 5.200 16 5.200S26.800 10 26.800 16 22 26.600 16 26.600zm5.900-8c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.2-.2.300-.800 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.300-.2-.3 0-.5.100-.7.100-.1.300-.4.500-.6.200-.2.200-.3.300-.5.100-.2.100-.4 0-.6-.1-.2-.7-1.800-1-2.400-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.100-1.200 2.800s1.200 3.200 1.400 3.500c.2.200 2.400 3.700 5.800 5.100.8.400 1.400.600 1.900.700.800.300 1.500.200 2.100.100.600-.1 1.900-.800 2.200-1.500.300-.8.300-1.400.200-1.500-.1-.2-.3-.3-.6-.4z"/></svg></a>
+
+<script>
+const TEL = '01002334711', TEL_INTL = '201002334711';
+const WA_ICON = document.querySelector('#fab svg').outerHTML;
+
+const UI = {
+  en: {
+    other: 'العربية', title: 'Lions Med Company — Poultry Health & Nutrition',
+    nav: [['#products', 'Products'], ['#feed', 'Poultry feed'], ['#partners', 'Partners'], ['#contact', 'Contact']],
+    eyebrow: 'Poultry Health & Nutrition', h1a: 'Product', h1b: 'Catalogue',
+    lead: 'Anticoccidials, gut-health actives and mineral feed additives, formulated for performance across the production cycle.',
+    browse: 'Browse products', wa: 'WhatsApp', call: 'Call', edition: 'Edition 2026',
+    groups: [
+      ['Anticoccidials & Gut Health', '01 — Feed additives', ['emistop', 'madumix', 'echomos']],
+      ['Minerals & Probiotics', '02 — Feed additives', ['imerys', 'pgb', 'yeast']]
+    ],
+    quote1: '“Formulated for consistent performance, from brooding through to finishing.”',
+    more: 'Details', dosage: 'Dosage', packaging: 'Packaging', perTon: 'ton feed',
+    noteT: 'Handling note',
+    note: ['Store premixes in a cool, dry place, tightly sealed and out of direct sunlight.', 'Mix thoroughly into base feed at the stated dosage before use.', 'For veterinary use only.'],
+    feedEyebrow: 'Poultry feed', feedH: 'Feed is the foundation of poultry performance.',
+    feedP: 'Feed is typically the largest single cost in poultry production, commonly estimated at 60–70% of the total. A balanced ration delivered consistently through every stage of the cycle drives growth, egg output and flock uniformity, and it is also the most practical way to deliver targeted additives to the whole flock.',
+    tiles: [
+      ['Balanced nutrition', 'Energy from cereals, protein from soybean meal and other sources, plus amino acids, vitamins and minerals, matched to the age and production stage of the bird.'],
+      ['Gut health', 'The intestine drives nutrient absorption. A stable gut lining and balanced microflora support feed conversion, and coccidiosis control remains a cornerstone of intestinal health.'],
+      ['Feed quality', 'Moulds, mycotoxins, moisture and poor storage all reduce feed value. Binders such as clinoptilolite can help limit the impact of certain toxins and ammonia.'],
+      ['Correct use', 'Premixes must be mixed thoroughly at the labelled dose per ton of feed. Follow the label, veterinary advice and any withdrawal periods that apply to medicated feed.']
+    ],
+    cycleT: 'The production cycle · Typical broiler programme',
+    cycle: [['Starter', 'Approx. days 0–10', 'Early gut development and a fast, healthy start.'], ['Grower', 'Approx. days 11–24', 'Steady growth and frame development.'], ['Finisher', 'Approx. day 25 to market', 'Feed efficiency and final weight.']],
+    partnersH: 'Manufacturing & distribution partners', partnersP: 'Backed by specialist manufacturing and distribution partners.',
+    rangeT: 'Product range', rangeP: 'Anticoccidials, yeast cell wall prebiotics, natural zeolite binders and multi-strain probiotic premixes for poultry.',
+    qualT: 'Quality', qualP: 'Every premix is formulated for veterinary use only, with dosage validated per ton of finished feed.',
+    contactH: 'Contact us', tel: 'Tel', waT: 'WhatsApp', addrT: 'Address', addr: 'Mansoura, Gamaa District',
+    disclaimer: 'General information only. Always follow product labels, local regulations and veterinary advice.',
+    vet: 'For veterinary use only', print: 'View print catalogue', back: '← All products',
+    admin: 'Dosage & administration', ask: 'Ask about this product', distributed: 'Distributed by Lions Med Company',
+    waMsg: 'Hello, I would like to ask about '
+  },
+  ar: {
+    other: 'English', title: 'شركة ليونز ميد — صحة وتغذية الدواجن',
+    nav: [['#products', 'المنتجات'], ['#feed', 'علف الدواجن'], ['#partners', 'الشركاء'], ['#contact', 'تواصل معنا']],
+    eyebrow: 'صحة وتغذية الدواجن', h1a: 'كتالوج', h1b: 'المنتجات',
+    lead: 'مضادات الكوكسيديا ومواد دعم صحة الأمعاء والإضافات العلفية المعدنية، مُركَّبة لتحقيق أفضل أداء على مدار دورة الإنتاج.',
+    browse: 'تصفح المنتجات', wa: 'واتساب', call: 'اتصل بنا', edition: 'إصدار 2026',
+    groups: [
+      ['مضادات الكوكسيديا وصحة الأمعاء', '01 — إضافات الأعلاف', ['emistop', 'madumix', 'echomos']],
+      ['المعادن والبروبيوتيك', '02 — إضافات الأعلاف', ['imerys', 'pgb', 'yeast']]
+    ],
+    quote1: '«مُركَّبة لأداء ثابت، من التحضين حتى التسويق.»',
+    more: 'التفاصيل', dosage: 'الجرعة', packaging: 'العبوة', perTon: 'طن علف',
+    noteT: 'تعليمات التداول',
+    note: ['تُحفظ البريمكسات في مكان بارد وجاف، محكمة الغلق وبعيدًا عن أشعة الشمس المباشرة.', 'تُخلط جيدًا مع العلف الأساسي بالجرعة المحددة قبل الاستخدام.', 'للاستعمال البيطري فقط.'],
+    feedEyebrow: 'علف الدواجن', feedH: 'العلف هو أساس أداء الدواجن.',
+    feedP: 'يمثل العلف عادةً أكبر بند تكلفة في إنتاج الدواجن، ويُقدَّر غالبًا بنحو 60–70% من الإجمالي. العليقة المتوازنة المقدَّمة بانتظام في كل مراحل الدورة هي ما يدعم النمو وإنتاج البيض وتجانس القطيع، وهي أيضًا الوسيلة الأكثر عملية لتوصيل الإضافات المستهدفة إلى القطيع كله.',
+    tiles: [
+      ['تغذية متوازنة', 'طاقة من الحبوب، وبروتين من كسب فول الصويا ومصادر أخرى، مع الأحماض الأمينية والفيتامينات والمعادن، بما يناسب عمر الطائر ومرحلة إنتاجه.'],
+      ['صحة الأمعاء', 'الأمعاء هي أساس امتصاص العناصر الغذائية. بطانة أمعاء سليمة وفلورا متوازنة تدعمان التحويل الغذائي، وتبقى السيطرة على الكوكسيديا ركيزة أساسية لصحة الأمعاء.'],
+      ['جودة العلف', 'الفطريات والسموم الفطرية والرطوبة وسوء التخزين كلها تقلل قيمة العلف. مضادات السموم مثل الكلينوبتيلوليت تساعد في الحد من تأثير بعض السموم والأمونيا.'],
+      ['الاستخدام الصحيح', 'يجب خلط البريمكسات جيدًا بالجرعة المدوَّنة على العبوة لكل طن علف. اتبع بيانات العبوة وتعليمات الطبيب البيطري وفترات السحب الخاصة بالأعلاف العلاجية.']
+    ],
+    cycleT: 'دورة الإنتاج · برنامج تسمين نموذجي',
+    cycle: [['البادئ', 'تقريبًا من يوم 0 إلى 10', 'نمو مبكر للأمعاء وبداية سريعة وصحية.'], ['النامي', 'تقريبًا من يوم 11 إلى 24', 'نمو منتظم وبناء الهيكل.'], ['الناهي', 'تقريبًا من يوم 25 حتى التسويق', 'كفاءة التحويل الغذائي والوزن النهائي.']],
+    partnersH: 'شركاء التصنيع والتوزيع', partnersP: 'مدعومون بشركاء متخصصين في التصنيع والتوزيع.',
+    rangeT: 'مجموعة المنتجات', rangeP: 'مضادات كوكسيديا، بريبيوتيك من جدار خلايا الخميرة، مضادات سموم من الزيوليت الطبيعي، وبريمكسات بروبيوتيك متعددة السلالات للدواجن.',
+    qualT: 'الجودة', qualP: 'كل بريمكس مُركَّب للاستعمال البيطري فقط، بجرعة محددة لكل طن من العلف النهائي.',
+    contactH: 'تواصل معنا', tel: 'تليفون', waT: 'واتساب', addrT: 'العنوان', addr: 'المنصورة، حي الجامعة',
+    disclaimer: 'معلومات عامة فقط. يجب دائمًا اتباع بيانات العبوة واللوائح المحلية وتعليمات الطبيب البيطري.',
+    vet: 'للاستعمال البيطري فقط', print: 'عرض الكتالوج المطبوع', back: 'كل المنتجات →',
+    admin: 'الجرعة وطريقة الاستخدام', ask: 'استفسر عن هذا المنتج', distributed: 'توزيع شركة ليونز ميد',
+    waMsg: 'مرحبًا، أريد الاستفسار عن '
+  }
+};
+
+const P = {
+  emistop: {
+    img: 'emistop.jpg', name: 'Emistop Premix Vet',
+    en: {
+      sub: 'Anticoccidial premix — Diclazuril', tag: 'Anticoccidial premix · Diclazuril',
+      head: 'Powerful broad-spectrum anti-coccidial feed additive',
+      compL: 'Composition — per 1 kg', comp: [['Diclazuril', '2,000 mg']], dose: '500 g / ton feed', pack: '25 kg bag',
+      secs: [
+        ['About the product', 'Emistop Premix Vet is a potent feed additive powder formulated to interrupt the parasitic life cycle of coccidia, offering reliable prophylactic protection across poultry, turkeys and rabbits. Its targeted mode of action breaks the development cycle early, ensuring complete intestinal integrity and optimum flock growth.'],
+        ['Key properties & mode of action', [['Targeted intracellular action:', 'Diclazuril acts against intracellular development stages during schizogony and gametogony.'], ['Life-cycle interruption:', 'acts on schizonts and gamonts, effectively halting parasite replication.'], ['Multi-species protection:', 'highly active against a wide range of Eimeria species affecting multiple livestock types.']]],
+        ['Indications', 'Control of coccidiosis caused by:', [['Poultry:', '<i>E. acervulina, E. maxima, E. tenella, E. brunetti, E. necatrix</i> and <i>E. mitis</i>'], ['Turkeys:', '<i>E. adenoeides, E. gallopavonis</i> and <i>E. meleagrimitis</i>'], ['Rabbits:', '<i>E. stiedae, E. flavescens, E. perforans, E. magna</i> and <i>E. intestinalis</i>']]]
+      ],
+      admin: [['Dosage', '500 g per ton of feed.'], ['Application', 'Mix thoroughly into complete feed during manufacturing.']]
+    },
+    ar: {
+      sub: 'بريمكس مضاد للكوكسيديا — ديكلازوريل', tag: 'بريمكس مضاد للكوكسيديا · ديكلازوريل',
+      head: 'إضافة علفية قوية واسعة المدى مضادة للكوكسيديا',
+      compL: 'التركيب — لكل 1 كجم', comp: [['ديكلازوريل', '2,000 مجم']], dose: '500 جم / طن علف', pack: 'شيكارة 25 كجم',
+      secs: [
+        ['عن المنتج', 'إيميستوب بريمكس فيت مسحوق إضافة علفية قوي المفعول، مُركَّب لقطع دورة حياة طفيل الكوكسيديا، ويوفر حماية وقائية موثوقة في الدواجن والرومي والأرانب. آلية عمله المستهدفة تكسر دورة تطور الطفيل مبكرًا، بما يضمن سلامة الأمعاء الكاملة والنمو الأمثل للقطيع.'],
+        ['الخصائص الأساسية وآلية العمل', [['تأثير مستهدف داخل الخلايا:', 'يعمل الديكلازوريل ضد مراحل التطور داخل الخلايا أثناء التكاثر اللاجنسي (الشيزوجوني) والجنسي (الجاميتوجوني).'], ['قطع دورة الحياة:', 'يؤثر على الشيزونتات والجامونتات فيوقف تكاثر الطفيل بفاعلية.'], ['حماية لعدة أنواع:', 'فعّال جدًا ضد مدى واسع من أنواع الإيميريا التي تصيب أنواعًا متعددة من الحيوانات.']]],
+        ['دواعي الاستعمال', 'السيطرة على الكوكسيديا التي تسببها:', [['الدواجن:', '<i>E. acervulina, E. maxima, E. tenella, E. brunetti, E. necatrix</i> و <i>E. mitis</i>'], ['الرومي:', '<i>E. adenoeides, E. gallopavonis</i> و <i>E. meleagrimitis</i>'], ['الأرانب:', '<i>E. stiedae, E. flavescens, E. perforans, E. magna</i> و <i>E. intestinalis</i>']]]
+      ],
+      admin: [['الجرعة', '500 جم لكل طن علف.'], ['طريقة الاستخدام', 'يُخلط جيدًا مع العلف الكامل أثناء التصنيع.']]
+    }
+  },
+  madumix: {
+    img: 'madumix.jpg', name: 'Madumix Vet',
+    en: {
+      sub: 'Anticoccidial premix — Maduramycin', tag: 'Anticoccidial premix · Maduramycin',
+      head: 'Advanced anti-coccidial protection for optimum broiler performance',
+      compL: 'Composition — per 1 kg', comp: [['Maduramycin', '10,000 mg']], dose: '500 g / ton feed', pack: '25 kg bag',
+      secs: [
+        ['About the product', 'Madumix Vet is a highly potent anti-coccidial feed additive specifically engineered to deliver superior protection against clinical and subclinical coccidiosis in poultry. By targeting parasites at the early stages of their development, it safeguards gut integrity and maximizes broiler productivity.'],
+        ['Key features & benefits', [['Broad-spectrum control:', 'highly effective against the most pathogenic Eimeria species.'], ['Early-stage intervention:', 'targets sporozoites and first-generation schizonts early in the parasite life cycle, preventing severe intestinal tissue damage.'], ['Gut health & absorption:', 'maintains the integrity of the intestinal mucosa, ensuring maximum nutrient absorption.'], ['Enhanced performance:', 'significantly improves feed conversion ratio (FCR) and boosts weight gain in broiler flocks.']]],
+        ['Indications', 'Clinical and subclinical coccidiosis in poultry, including the most pathogenic Eimeria species:', [['', '<i>E. tenella</i> — cecal coccidiosis'], ['', '<i>E. necatrix</i> — deep intestinal coccidiosis'], ['', '<i>E. acervulina, E. maxima, E. mitis</i> and <i>E. brunetti</i>']]]
+      ],
+      admin: [['Dosage', '500 g per ton of feed.'], ['Application', 'Mix thoroughly into complete feed during manufacturing.']]
+    },
+    ar: {
+      sub: 'بريمكس مضاد للكوكسيديا — مادوراميسين', tag: 'بريمكس مضاد للكوكسيديا · مادوراميسين',
+      head: 'حماية متقدمة ضد الكوكسيديا لأفضل أداء في التسمين',
+      compL: 'التركيب — لكل 1 كجم', comp: [['مادوراميسين', '10,000 مجم']], dose: '500 جم / طن علف', pack: 'شيكارة 25 كجم',
+      secs: [
+        ['عن المنتج', 'مادوميكس فيت إضافة علفية عالية الفاعلية مضادة للكوكسيديا، مُصمَّمة خصيصًا لتوفير حماية فائقة ضد الكوكسيديا الإكلينيكية وتحت الإكلينيكية في الدواجن. باستهداف الطفيل في مراحل تطوره المبكرة، يحافظ على سلامة الأمعاء ويرفع إنتاجية بداري التسمين إلى أقصاها.'],
+        ['المميزات والفوائد', [['سيطرة واسعة المدى:', 'فعّال جدًا ضد أشد أنواع الإيميريا ضراوة.'], ['تدخل في المراحل المبكرة:', 'يستهدف السبوروزويتات وشيزونتات الجيل الأول مبكرًا في دورة حياة الطفيل، فيمنع التلف الشديد في أنسجة الأمعاء.'], ['صحة الأمعاء والامتصاص:', 'يحافظ على سلامة الغشاء المخاطي للأمعاء، بما يضمن أقصى امتصاص للعناصر الغذائية.'], ['أداء أفضل:', 'يحسّن معامل التحويل الغذائي (FCR) بشكل ملحوظ ويزيد الوزن المكتسب في قطعان التسمين.']]],
+        ['دواعي الاستعمال', 'الكوكسيديا الإكلينيكية وتحت الإكلينيكية في الدواجن، بما فيها أشد أنواع الإيميريا ضراوة:', [['', '<i>E. tenella</i> — كوكسيديا الأعورين'], ['', '<i>E. necatrix</i> — كوكسيديا الأمعاء العميقة'], ['', '<i>E. acervulina, E. maxima, E. mitis</i> و <i>E. brunetti</i>']]]
+      ],
+      admin: [['الجرعة', '500 جم لكل طن علف.'], ['طريقة الاستخدام', 'يُخلط جيدًا مع العلف الكامل أثناء التصنيع.']]
+    }
+  },
+  echomos: {
+    img: 'echomos.jpg', name: 'Echomos',
+    en: {
+      sub: 'Yeast cell wall — gut integrity support', tag: 'Yeast cell wall · Mazzoleni (Italy)',
+      head: 'Ultimate protection for stronger flocks & higher productivity',
+      compL: 'Composition — per 1 kg', comp: [['Yeast cell wall S. cerevisiae', '1,000 g'], ['Mannan oligosaccharide', '200 g']], dose: '250 g / ton feed', pack: '20 kg bag',
+      secs: [
+        ['About the product', 'Echomos is a premium feed additive manufactured by Mazzoleni (Italy), designed to provide total mycotoxin control and boost poultry immunity. Formulated from premium yeast cell walls, it delivers maximum concentrations of beta-glucans and mannan-oligosaccharides (MOS).'],
+        ['Active ingredients & mode of action', [['High-concentration beta-glucans:', 'activate the immune system and enhance white blood cell response against field challenges.'], ['Superior mannan-oligosaccharides (MOS):', 'bind mycotoxins and pathogenic bacteria, preventing intestinal absorption and supporting gut health.']]],
+        ['Key benefits', [['Effective mycotoxin binding:', 'neutralizes harmful mycotoxins to protect liver and gut integrity.'], ['Immune system support:', 'maximizes natural disease resistance through elevated beta-glucan levels.'], ['Enhanced FCR & gut health:', 'promotes beneficial microflora and improves the overall feed conversion ratio.'], ['Italian premium quality:', 'manufactured under strict European quality standards.']]],
+        ['Indications', [['', 'Complete prevention and control of mycotoxins in poultry feeds.'], ['', 'Immune boosting and performance optimization in broilers, layers and breeders.']]]
+      ],
+      admin: [['Dosage', '250 g per ton of feed.'], ['Application', 'Mix thoroughly with feed raw materials during processing.']]
+    },
+    ar: {
+      sub: 'جدار خلايا الخميرة — دعم سلامة الأمعاء', tag: 'جدار خلايا الخميرة · مازوليني (إيطاليا)',
+      head: 'حماية قصوى لقطعان أقوى وإنتاجية أعلى',
+      compL: 'التركيب — لكل 1 كجم', comp: [['جدار خلايا خميرة S. cerevisiae', '1,000 جم'], ['مانان أوليجوسكاريد', '200 جم']], dose: '250 جم / طن علف', pack: 'شيكارة 20 كجم',
+      secs: [
+        ['عن المنتج', 'إيكوموس إضافة علفية ممتازة من إنتاج شركة مازوليني (إيطاليا)، مُصمَّمة للسيطرة الكاملة على السموم الفطرية ورفع مناعة الدواجن. مُركَّب من جدر خلايا خميرة عالية الجودة، ويوفر أعلى تركيزات من البيتا جلوكان والمانان أوليجوسكاريد (MOS).'],
+        ['المواد الفعالة وآلية العمل', [['بيتا جلوكان عالي التركيز:', 'ينشّط الجهاز المناعي ويعزز استجابة كرات الدم البيضاء ضد التحديات الحقلية.'], ['مانان أوليجوسكاريد (MOS) فائق الجودة:', 'يرتبط بالسموم الفطرية والبكتيريا الممرضة فيمنع امتصاصها من الأمعاء ويدعم صحتها.']]],
+        ['أهم الفوائد', [['ربط فعّال للسموم الفطرية:', 'يعادل السموم الفطرية الضارة لحماية الكبد وسلامة الأمعاء.'], ['دعم الجهاز المناعي:', 'يرفع المقاومة الطبيعية للأمراض بفضل المستويات العالية من البيتا جلوكان.'], ['تحسين معامل التحويل وصحة الأمعاء:', 'يدعم الفلورا النافعة ويحسّن معامل التحويل الغذائي عمومًا.'], ['جودة إيطالية ممتازة:', 'مُصنَّع وفق معايير الجودة الأوروبية الصارمة.']]],
+        ['دواعي الاستعمال', [['', 'الوقاية الكاملة من السموم الفطرية في أعلاف الدواجن والسيطرة عليها.'], ['', 'رفع المناعة وتحسين الأداء في التسمين والبياض والأمهات.']]]
+      ],
+      admin: [['الجرعة', '250 جم لكل طن علف.'], ['طريقة الاستخدام', 'يُخلط جيدًا مع خامات العلف أثناء التصنيع.']]
+    }
+  },
+  imerys: {
+    img: 'imerys-bzf.jpg', name: 'Imerys BZF (Clinoptilolite)',
+    en: { sub: 'Proven toxin & ammonia binder', tag: 'Natural zeolite · Imerys', head: 'Proven toxin & ammonia binder', compL: 'Composition', comp: [['Clinoptilolite', '85%'], ['Feldspars, micas, clays & quartz', '15%']], dose: '1–2 kg / ton feed', secs: [], admin: [['Dosage', '1–2 kg per ton of feed.'], ['Application', 'Mix thoroughly into base feed at the stated dosage before use.']] },
+    ar: { sub: 'مضاد سموم وأمونيا مُثبَت الفاعلية', tag: 'زيوليت طبيعي · إيمريس', head: 'مضاد سموم وأمونيا مُثبَت الفاعلية', compL: 'التركيب', comp: [['كلينوبتيلوليت', '85%'], ['فلسبار، ميكا، طَفلة وكوارتز', '15%']], dose: '1–2 كجم / طن علف', secs: [], admin: [['الجرعة', '1–2 كجم لكل طن علف.'], ['طريقة الاستخدام', 'يُخلط جيدًا مع العلف الأساسي بالجرعة المحددة قبل الاستخدام.']] }
+  },
+  pgb: {
+    img: 'pgb.jpg', name: 'PGB Premix',
+    en: { sub: 'Aspergillus niger extract – weight-gain support', tag: 'Probiotic premix · Pangoo', head: 'Aspergillus niger extract – weight-gain support', compL: 'Composition', comp: [['Aspergillus niger extract', '120 g'], ['Aspergillus oryzae extract', '110 g'], ['Bacillus subtilis', '1.2 bn cfu'], ['Bacillus licheniformis', '1.2 bn cfu'], ['Lactobacillus acidophilus', '0.8 bn cfu'], ['Calcium carbonate carrier to', '1 kg']], dose: '100 g / ton feed', secs: [], admin: [['Dosage', '100 g per ton of feed.'], ['Application', 'Mix thoroughly into base feed at the stated dosage before use.']] },
+    ar: { sub: 'مستخلص أسبرجلس نيجر — لدعم زيادة الوزن', tag: 'بريمكس بروبيوتيك · بانجو', head: 'مستخلص أسبرجلس نيجر — لدعم زيادة الوزن', compL: 'التركيب', comp: [['مستخلص Aspergillus niger', '120 جم'], ['مستخلص Aspergillus oryzae', '110 جم'], ['Bacillus subtilis', '1.2 مليار cfu'], ['Bacillus licheniformis', '1.2 مليار cfu'], ['Lactobacillus acidophilus', '0.8 مليار cfu'], ['مادة حاملة كربونات كالسيوم حتى', '1 كجم']], dose: '100 جم / طن علف', secs: [], admin: [['الجرعة', '100 جم لكل طن علف.'], ['طريقة الاستخدام', 'يُخلط جيدًا مع العلف الأساسي بالجرعة المحددة قبل الاستخدام.']] }
+  },
+  yeast: {
+    img: 'extra-yeast.jpg', name: 'Extra Yeast',
+    en: {
+      sub: 'Inactive yeast feed additive — Avitasa', tag: 'Yeast feed additive · Avitasa (Spain)',
+      head: 'Nutraceutical efficiency for optimal animal health & performance',
+      compL: 'Base ingredient', comp: [['Premium inactive yeast', '']], dose: '0.5–1 kg / ton feed', doseL: 'Dosage · Poultry', pack: '1 kg / 25 kg bags',
+      secs: [
+        ['About the product', 'Extra Yeast is a high-performance nutritional supplement produced by AVITASA in Tarragona, Spain. Formulated using premium inactive yeast, it serves as an essential feed additive to enhance digestion, boost natural immunity and support optimal growth in livestock and poultry.'],
+        ['Target species', [['Poultry:', 'broilers, layers, breeders and turkeys'], ['Cattle:', 'beef and dairy'], ['Rabbits', '']]],
+        ['Key features & benefits', [['Rich nutritional profile:', 'provides concentrated inactive yeast components, essential proteins and trace nutrients to support balanced animal nutrition.'], ['Enhanced gut health:', 'promotes a healthy digestive environment and improves feed efficiency.'], ['Immune system booster:', 'strengthens natural defenses against environmental and disease challenges.'], ['Premium Spanish quality:', 'manufactured under strict European quality control standards by AVITASA.']]],
+        ['Manufacturer', 'AVITASA, Tarragona, Spain.']
+      ],
+      admin: [['Poultry', '0.5–1 kg per ton of complete feed.'], ['Beef & dairy cattle', '0.5–2 kg per ton of feed (or 3.5–14 g per head / day top dress).'], ['Rabbits', '1–2 kg per ton of feed.']]
+    },
+    ar: {
+      sub: 'إضافة علفية من الخميرة غير النشطة — أفيتاسا', tag: 'إضافة علفية من الخميرة · أفيتاسا (إسبانيا)',
+      head: 'كفاءة غذائية لأفضل صحة وأداء للحيوان',
+      compL: 'المكوّن الأساسي', comp: [['خميرة غير نشطة عالية الجودة', '']], dose: '0.5–1 كجم / طن علف', doseL: 'الجرعة · الدواجن', pack: 'عبوات 1 كجم / 25 كجم',
+      secs: [
+        ['عن المنتج', 'إكسترا ييست مكمل غذائي عالي الأداء من إنتاج شركة أفيتاسا في تاراجونا، إسبانيا. مُركَّب من خميرة غير نشطة عالية الجودة، ويُستخدم كإضافة علفية أساسية لتحسين الهضم ورفع المناعة الطبيعية ودعم النمو الأمثل في الماشية والدواجن.'],
+        ['الأنواع المستهدفة', [['الدواجن:', 'التسمين والبياض والأمهات والرومي'], ['الماشية:', 'التسمين والحلاب'], ['الأرانب', '']]],
+        ['المميزات والفوائد', [['تركيبة غذائية غنية:', 'يوفر مكونات مركزة من الخميرة غير النشطة وبروتينات أساسية وعناصر نادرة لدعم تغذية متوازنة للحيوان.'], ['صحة أفضل للأمعاء:', 'يدعم بيئة هضمية صحية ويحسّن كفاءة الاستفادة من العلف.'], ['تقوية الجهاز المناعي:', 'يقوّي الدفاعات الطبيعية ضد التحديات البيئية والمرضية.'], ['جودة إسبانية ممتازة:', 'مُصنَّع وفق معايير مراقبة الجودة الأوروبية الصارمة لدى أفيتاسا.']]],
+        ['الشركة المنتجة', 'أفيتاسا، تاراجونا، إسبانيا.']
+      ],
+      admin: [['الدواجن', '0.5–1 كجم لكل طن علف كامل.'], ['ماشية التسمين والحلاب', '0.5–2 كجم لكل طن علف (أو 3.5–14 جم للرأس يوميًا تُرش على العلف).'], ['الأرانب', '1–2 كجم لكل طن علف.']]
+    }
+  }
+};
+
+const LOGOS = [['logo-mazzoleni.jpg', 'Mazzoleni'], ['logo-avitasa.jpg', 'Avitasa'], ['logo-pangoo.jpg', 'Pangoo'], ['logo-imerys.jpg', 'Imerys']];
+
+function getLang() {
+  const q = new URLSearchParams(location.search).get('lang');
+  if (q === 'ar' || q === 'en') return q;
+  try { const s = localStorage.getItem('lang'); if (s === 'ar' || s === 'en') return s; } catch (e) {}
+  return (navigator.language || '').toLowerCase().startsWith('ar') ? 'ar' : 'en';
+}
+let lang = getLang();
+
+const wa = (text) => 'https://wa.me/' + TEL_INTL + (text ? '?text=' + encodeURIComponent(text) : '');
+const comp = (rows) => '<ul class="comp">' + rows.map(r => `<li>${r[0]}${r[1] ? ` <b>${r[1]}</b>` : ''}</li>`).join('') + '</ul>';
+const items = (rows) => '<ul>' + rows.map(r => `<li>${r[0] ? `<b>${r[0]}</b> ` : ''}${r[1]}</li>`).join('') + '</ul>';
+
+function card(id, t) {
+  const p = P[id], d = p[lang];
+  return `<a class="card" href="#/p/${id}">
+    <div class="ph"><img src="assets/${p.img}" alt="${p.name}" loading="lazy"></div>
+    <h3>${p.name}</h3><div class="sub">${d.sub}</div>
+    <p class="label">${d.compL}</p>${comp(d.comp)}
+    <div class="foot"><span class="pill">${d.dose}</span><span class="more">${t.more}</span></div>
+  </a>`;
+}
+
+function home(t) {
+  return `
+  <div class="hero">
+    <img class="hero-img" src="assets/hero.jpg" alt="Lions Med Company">
+    <div class="wrap hero-body">
+      <div class="eyebrow">${t.eyebrow}</div>
+      <h1>${t.h1a}<em>${t.h1b}</em></h1>
+      <p>${t.lead}</p>
+      <div class="btns">
+        <a class="btn btn-gold" href="#products">${t.browse}</a>
+        <a class="btn btn-wa" href="${wa()}" target="_blank" rel="noopener">${WA_ICON}${t.wa}</a>
+        <a class="btn btn-line" href="tel:+${TEL_INTL}">${t.call} <span dir="ltr">${TEL}</span></a>
+      </div>
+    </div>
+  </div>
+  <section id="products"><div class="wrap">
+    ${t.groups.map(g => `<div class="group">
+      <div class="sec-head"><h2>${g[0]}</h2><span class="eyebrow">${g[1]}</span></div>
+      <div class="grid">${g[2].map(id => card(id, t)).join('')}</div>
+    </div>`).join('')}
+    <div class="note"><div class="eyebrow">${t.noteT}</div>${t.note.map(n => `<p>${n}</p>`).join('')}</div>
+    <p class="quote">${t.quote1}</p>
+  </div></section>
+  <section class="dark" id="feed"><div class="wrap">
+    <div class="eyebrow">${t.feedEyebrow}</div>
+    <h2 class="big">${t.feedH}</h2>
+    <p class="lead">${t.feedP}</p>
+    <div class="tiles">${t.tiles.map(x => `<div class="tile"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('')}</div>
+    <div class="eyebrow" style="margin-top:44px">${t.cycleT}</div>
+    <div class="cycle">${t.cycle.map((c, i) => `<div class="step"><h3><span>0${i + 1}</span>${c[0]}</h3><small>${c[1]}</small><p>${c[2]}</p></div>`).join('')}</div>
+  </div></section>
+  <section id="partners"><div class="wrap">
+    <div class="sec-head"><h2>${t.partnersH}</h2></div>
+    <p style="margin-top:0">${t.partnersP}</p>
+    <div class="logos">${LOGOS.map(l => `<div><img src="assets/${l[0]}" alt="${l[1]}" loading="lazy"></div>`).join('')}</div>
+    <div class="tiles" style="margin-top:34px">
+      <div><div class="eyebrow">${t.rangeT}</div><p>${t.rangeP}</p></div>
+      <div><div class="eyebrow">${t.qualT}</div><p>${t.qualP}</p></div>
+    </div>
+  </div></section>
+  ${contact(t)}`;
+}
+
+function contact(t) {
+  return `<section class="dark" id="contact"><div class="wrap">
+    <div class="sec-head"><h2>${t.contactH}</h2><span class="eyebrow">Lions Med Company</span></div>
+    <div class="contact">
+      <div class="tile"><div class="eyebrow">${t.tel}</div><a href="tel:+${TEL_INTL}">${TEL}</a></div>
+      <div class="tile"><div class="eyebrow">${t.waT}</div><a href="${wa()}" target="_blank" rel="noopener">${TEL}</a></div>
+      <div class="tile"><div class="eyebrow">${t.addrT}</div><p style="font-size:1.15rem;opacity:1">${t.addr}</p></div>
+    </div>
+  </div></section>`;
+}
+
+function product(id, t) {
+  const p = P[id], d = p[lang];
+  const sec = (s) => `<div class="p-sec"><h3>${s[0]}</h3>${s.slice(1).map(x => typeof x === 'string' ? `<p>${x}</p>` : items(x)).join('')}</div>`;
+  return `<div class="wrap p-page">
+    <a class="back" href="#products">${t.back}</a>
+    <div class="sec-head"><h1>${p.name}</h1><span class="eyebrow">${d.sub}</span></div>
+    <div class="p-head">
+      <div class="ph"><img src="assets/${p.img}" alt="${p.name}"></div>
+      <div>
+        <div class="eyebrow">${d.tag}</div>
+        <h2>${d.head}</h2>
+        <p class="label">${d.compL}</p>${comp(d.comp)}
+        <div class="boxes">
+          <div class="box"><small>${d.doseL || t.dosage}</small><b>${d.dose}</b></div>
+          ${d.pack ? `<div class="box"><small>${t.packaging}</small><b>${d.pack}</b></div>` : ''}
+        </div>
+      </div>
+    </div>
+    ${d.secs.length ? `<div class="p-cols">${d.secs.map(sec).join('')}</div>` : '<div style="height:30px"></div>'}
+    <div class="admin"><h3>${t.admin}</h3><div class="cols">${d.admin.map(a => `<div><b>${a[0]}</b>${a[1]}</div>`).join('')}</div></div>
+    <div class="note"><div class="eyebrow">${t.noteT}</div>${t.note.map(n => `<p>${n}</p>`).join('')}</div>
+    <div class="p-cta">
+      <a class="btn btn-wa" href="${wa(t.waMsg + p.name)}" target="_blank" rel="noopener">${WA_ICON}${t.ask}</a>
+      <a class="btn btn-navy" href="tel:+${TEL_INTL}">${t.call} <span dir="ltr">${TEL}</span></a>
+    </div>
+  </div>${contact(t)}`;
+}
+
+function render() {
+  const t = UI[lang], h = location.hash;
+  const m = h.match(/^#\/p\/([a-z]+)$/);
+  const id = m && P[m[1]] ? m[1] : null;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.title = id ? P[id].name + ' — Lions Med Company' : t.title;
+  document.getElementById('nav').innerHTML = t.nav.map(n => `<a href="${n[0]}">${n[1]}</a>`).join('');
+  document.getElementById('lang').textContent = t.other;
+  document.getElementById('fab').href = wa();
+  document.getElementById('fab').setAttribute('aria-label', t.waT);
+  document.getElementById('foot').innerHTML = `<span>${t.disclaimer}</span><span>${t.vet} · ${t.edition} · <a href="catalogue.html">${t.print}</a></span>`;
+  document.getElementById('app').innerHTML = id ? product(id, t) : home(t);
+  if (id) scrollTo(0, 0);
+  else if (h.length > 1 && !h.startsWith('#/')) { const el = document.getElementById(h.slice(1)); if (el) el.scrollIntoView(); }
+}
+
+document.getElementById('lang').addEventListener('click', () => {
+  lang = lang === 'ar' ? 'en' : 'ar';
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+  render();
+});
+addEventListener('hashchange', render);
+render();
+</script>
 </body>
 </html>

@@ -1,14 +1,10 @@
 # Lions Med Company — Catalogue 2026
 
-This is a GitHub Pages-ready version of the supplied 8-page PDF catalogue.
+Bilingual (English / Arabic) product site, published with GitHub Pages:
+https://egyone1.github.io/lions-med-catalogue/
 
-## Publish on GitHub Pages
+- `index.html` — the site. All text (both languages) and product data live in the `UI` and `P` objects in the script at the bottom of the file.
+- `assets/` — product photos, partner logos and the cover image, cropped from the catalogue pages.
+- `catalogue.html` + `pages/` — the original 8-page print catalogue rendered as images.
 
-1. Create a new GitHub repository.
-2. Upload `index.html` and the `pages` folder.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and `/ (root)`, then Save.
-6. GitHub will give you the public Pages URL.
-
-The catalogue is rendered page-for-page as images so the visual result stays as close as possible to the supplied PDF, including typography, spacing, logos and product photos.
+Language is picked from the visitor's browser, the toggle in the header, or `?lang=ar` / `?lang=en` in the URL.
