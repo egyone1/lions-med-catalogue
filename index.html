@@ -38,12 +38,17 @@
     nav a:hover { opacity: 1; color: var(--gold); }
     .lang { margin-inline-start: 8px; background: none; border: 1px solid var(--gold); color: var(--gold); border-radius: 6px; padding: 6px 12px; font: inherit; font-size: .88rem; font-weight: 600; cursor: pointer; }
     .lang:hover { background: var(--gold); color: var(--navy); }
-    @media (max-width: 760px) { nav { display: none; } .lang { margin-inline-start: auto; } }
+    @media (max-width: 760px) {
+      .bar { flex-wrap: wrap; row-gap: 0; min-height: 0; padding-top: 10px; }
+      .lang { margin-inline-start: auto; }
+      nav { order: 3; width: 100%; margin: 10px 0 0; padding: 9px 0 10px; gap: 22px; overflow-x: auto; white-space: nowrap; border-top: 1px solid rgba(255,255,255,.14); scrollbar-width: none; }
+      nav::-webkit-scrollbar { display: none; }
+    }
 
     /* hero */
     .hero { background: var(--navy); color: #fff; }
     .hero-img { width: 100%; height: min(520px, 87.3vw); object-fit: cover; object-position: 50% 62%; border-bottom: 4px solid var(--gold); }
-    .hero-body { padding: 48px 0 56px; }
+    .hero-body { padding-top: 48px; padding-bottom: 56px; }
     .hero h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 700; margin: 14px 0 16px; }
     .hero h1 em { display: block; font-style: normal; color: var(--gold); }
     .hero p { max-width: 640px; font-size: 1.08rem; opacity: .9; margin: 0 0 28px; }
@@ -140,6 +145,19 @@
     .p-cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 0; }
     .p-page { padding-bottom: 60px; }
     .p-page h1 { font-size: clamp(1.8rem, 5vw, 2.4rem); }
+    @media (max-width: 760px) {
+      section { padding: 40px 0; scroll-margin-top: 114px; }
+      .hero-body { padding-top: 32px; padding-bottom: 40px; }
+      .btns .btn, .p-cta .btn { flex: 1 1 140px; justify-content: center; }
+      .grid { grid-template-columns: 1fr; }
+      .card .ph, .card .ph img { height: 170px; max-height: 170px; }
+      .card .ph img { height: auto; }
+      .note { padding: 18px 20px; }
+      .admin { padding: 22px 20px; }
+      .fab { width: 50px; height: 50px; bottom: 14px; inset-inline-end: 14px; }
+      .fab svg { width: 26px; height: 26px; }
+      footer { padding-bottom: 76px; }
+    }
     @media (max-width: 760px) { .p-head { grid-template-columns: 1fr; padding: 22px; } .p-cols { columns: 1; } .p-head .ph img { max-height: 240px; } }
   </style>
 </head>
