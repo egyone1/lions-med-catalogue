@@ -56,7 +56,7 @@
     .btn:hover { filter: brightness(1.08); }
 
     /* sections */
-    section { padding: 56px 0; }
+    section { padding: 56px 0; scroll-margin-top: 62px; }
     .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-bottom: 2px solid var(--navy-3); padding-bottom: 12px; margin-bottom: 24px; }
     .sec-head h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; }
     .group + .group { margin-top: 48px; }
@@ -66,7 +66,7 @@
     .card { background: var(--card); border-inline-start: 5px solid var(--gold); box-shadow: 0 1px 3px rgba(0,0,0,.08); padding: 22px; display: flex; flex-direction: column; text-decoration: none; transition: transform .15s, box-shadow .15s; }
     a.card:hover { transform: translateY(-3px); box-shadow: 0 8px 22px rgba(13,27,46,.14); }
     .card .ph { height: 190px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
-    .card .ph img { max-height: 190px; width: auto; }
+    .card .ph img { max-height: 190px; width: auto; height: auto; }
     .card h3 { font-size: 1.35rem; font-weight: 700; }
     .card .sub { color: var(--gold); font-weight: 500; margin: 4px 0 14px; }
     .card .foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 14px; }
@@ -116,7 +116,7 @@
     .back { display: inline-block; margin: 26px 0 6px; color: var(--gold); font-weight: 600; text-decoration: none; }
     .p-head { background: var(--card); border-inline-start: 5px solid var(--gold); box-shadow: 0 1px 3px rgba(0,0,0,.08); padding: 30px; display: grid; grid-template-columns: 280px 1fr; gap: 30px; align-items: center; }
     .p-head .ph { display: flex; justify-content: center; }
-    .p-head .ph img { max-height: 320px; width: auto; }
+    .p-head .ph img { max-height: 320px; width: auto; height: auto; }
     .p-head h2 { font-size: clamp(1.3rem, 3.4vw, 1.8rem); font-weight: 500; margin: 8px 0 20px; }
     .p-head .comp { font-size: 1.1rem; margin-bottom: 22px; }
     .boxes { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
@@ -346,6 +346,8 @@ const P = {
   }
 };
 
+const SIZE = { 'emistop.jpg': [244, 335], 'madumix.jpg': [250, 335], 'echomos.jpg': [215, 350], 'imerys-bzf.jpg': [210, 265], 'pgb.jpg': [235, 345], 'extra-yeast.jpg': [350, 235] };
+const dims = (f) => 'width="' + SIZE[f][0] + '" height="' + SIZE[f][1] + '"';
 const LOGOS = [['logo-mazzoleni.jpg', 'Mazzoleni'], ['logo-avitasa.jpg', 'Avitasa'], ['logo-pangoo.jpg', 'Pangoo'], ['logo-imerys.jpg', 'Imerys']];
 
 function getLang() {
@@ -363,7 +365,7 @@ const items = (rows) => '<ul>' + rows.map(r => `<li>${r[0] ? `<b>${r[0]}</b> ` :
 function card(id, t) {
   const p = P[id], d = p[lang];
   return `<a class="card" href="#/p/${id}">
-    <div class="ph"><img src="assets/${p.img}" alt="${p.name}" loading="lazy"></div>
+    <div class="ph"><img src="assets/${p.img}" alt="${p.name}" ${dims(p.img)}></div>
     <h3>${p.name}</h3><div class="sub">${d.sub}</div>
     <p class="label">${d.compL}</p>${comp(d.comp)}
     <div class="foot"><span class="pill">${d.dose}</span><span class="more">${t.more}</span></div>
@@ -373,7 +375,7 @@ function card(id, t) {
 function home(t) {
   return `
   <div class="hero">
-    <img class="hero-img" src="assets/hero.jpg" alt="Lions Med Company">
+    <img class="hero-img" src="assets/hero.jpg" alt="Lions Med Company" width="1191" height="1040" fetchpriority="high">
     <div class="wrap hero-body">
       <div class="eyebrow">${t.eyebrow}</div>
       <h1>${t.h1a}<em>${t.h1b}</em></h1>
@@ -404,7 +406,7 @@ function home(t) {
   <section id="partners"><div class="wrap">
     <div class="sec-head"><h2>${t.partnersH}</h2></div>
     <p style="margin-top:0">${t.partnersP}</p>
-    <div class="logos">${LOGOS.map(l => `<div><img src="assets/${l[0]}" alt="${l[1]}" loading="lazy"></div>`).join('')}</div>
+    <div class="logos">${LOGOS.map(l => `<div><img src="assets/${l[0]}" alt="${l[1]}" width="204" height="76"></div>`).join('')}</div>
     <div class="tiles" style="margin-top:34px">
       <div><div class="eyebrow">${t.rangeT}</div><p>${t.rangeP}</p></div>
       <div><div class="eyebrow">${t.qualT}</div><p>${t.qualP}</p></div>
@@ -431,7 +433,7 @@ function product(id, t) {
     <a class="back" href="#products">${t.back}</a>
     <div class="sec-head"><h1>${p.name}</h1><span class="eyebrow">${d.sub}</span></div>
     <div class="p-head">
-      <div class="ph"><img src="assets/${p.img}" alt="${p.name}"></div>
+      <div class="ph"><img src="assets/${p.img}" alt="${p.name}" ${dims(p.img)}></div>
       <div>
         <div class="eyebrow">${d.tag}</div>
         <h2>${d.head}</h2>
@@ -452,7 +454,8 @@ function product(id, t) {
   </div>${contact(t)}`;
 }
 
-function render() {
+let shown = null;
+function render(e) {
   const t = UI[lang], h = location.hash;
   const m = h.match(/^#\/p\/([a-z]+)$/);
   const id = m && P[m[1]] ? m[1] : null;
@@ -464,6 +467,9 @@ function render() {
   document.getElementById('fab').href = wa();
   document.getElementById('fab').setAttribute('aria-label', t.waT);
   document.getElementById('foot').innerHTML = `<span>${t.disclaimer}</span><span>${t.vet} · ${t.edition} · <a href="catalogue.html">${t.print}</a></span>`;
+  const key = lang + ':' + (id || 'home');
+  if (key === shown && e) return;
+  shown = key;
   document.getElementById('app').innerHTML = id ? product(id, t) : home(t);
   if (id) scrollTo(0, 0);
   else if (h.length > 1 && !h.startsWith('#/')) { const el = document.getElementById(h.slice(1)); if (el) el.scrollIntoView(); }
