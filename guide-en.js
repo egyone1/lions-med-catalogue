@@ -8,9 +8,19 @@ window.GUIDE.en = {
   open: "Tap for details", close: "Close", all: "All",
   filters: [["broiler", "Broilers"], ["layer", "Layers"], ["breeder", "Breeders"]],
   sourcesT: "References & sources",
+  imgT: "Image credits (Wikimedia Commons)",
+  search: {
+    ph: "Search a disease, drug, vaccine, herb or product…",
+    hint: "Type in English or Arabic – small spelling mistakes are fine",
+    popularT: "Popular searches:",
+    popular: ["Newcastle", "Gumboro", "Coccidiosis", "Withdrawal period", "Enrofloxacin", "Disinfection", "Black seed", "Mycotoxins", "Layer vaccination"],
+    none: "No results. Try a simpler word or the active ingredient name.",
+    count: "results", fuzzy: "No exact match – closest results:", clear: "Clear",
+    products: "Products"
+  },
   tabs: [
 
-  { id: "diseases", icon: "virus", title: "Poultry diseases in Egypt", sub: "Broilers · Layers · Breeders",
+  { id: "diseases", img: "b-diseases", icon: "virus", title: "Poultry diseases in Egypt", sub: "Broilers · Layers · Breeders",
     intro: "The biggest problem on Egyptian farms is the respiratory disease complex: H9N2 influenza together with infectious bronchitis (the Egyptian Variant 2), Newcastle disease (genotype VII) and mycoplasma, with secondary E. coli. Mixed infections raise mortality and weaken vaccine responses. Use the filter to show each production type.",
     blocks: [
       { t: "cards", items: [
@@ -20,27 +30,27 @@ window.GUIDE.en = {
       ]},
       { t: "h", x: "Viral diseases" },
       { t: "acc", items: [
-        { h: "Highly pathogenic avian influenza (H5N1 / H5N8)", tags: ["broiler", "layer", "breeder"], rows: [
+        { img: "d-hpai", h: "Highly pathogenic avian influenza (H5N1 / H5N8)", tags: ["broiler", "layer", "breeder"], rows: [
           ["Cause", "Influenza A, subtype H5. Endemic in Egypt since 2006; H5N8 clade 2.3.4.4b viruses since 2016–2017, with several genotypes."],
           ["Signs", "Sudden, very high mortality, cyanotic comb and wattles, swollen head, haemorrhages on the shanks, sharp egg drop, sometimes nervous signs."],
           ["Prevention & control", "No treatment. Strict biosecurity, killed H5 vaccine per programme, and immediate reporting to the veterinary authority (GOVS). Current vaccines reduce mortality but do not fully stop virus shedding."]]},
-        { h: "Low pathogenic avian influenza (H9N2)", tags: ["broiler", "layer", "breeder"], rows: [
+        { img: "d-h9", h: "Low pathogenic avian influenza (H9N2)", tags: ["broiler", "layer", "breeder"], rows: [
           ["Cause", "H9N2, endemic in Egypt since 2011, often found together with H5 on the same farm."],
           ["Signs", "Respiratory signs (sneezing, rales, swollen sinuses), depression, egg drop. Mortality rises sharply with IB, mycoplasma or E. coli co-infection."],
           ["Prevention", "Killed H9 vaccine, good ventilation, low ammonia, and control of secondary bacteria."]]},
-        { h: "Newcastle disease (genotype VII)", tags: ["broiler", "layer", "breeder"], rows: [
+        { img: "d-nd", h: "Newcastle disease (genotype VII)", tags: ["broiler", "layer", "breeder"], rows: [
           ["Cause", "Virulent Newcastle disease virus; genotype VII dominates in Egypt despite intensive vaccination."],
           ["Signs", "Respiratory signs, green diarrhoea, nervous signs (twisted neck, paralysis), haemorrhages in the proventriculus; in layers a sharp drop and misshapen or shell-less eggs."],
           ["Prevention", "Programmes combining live and killed vaccines, titre monitoring by HI or ELISA, and revaccination of layers about every 6–8 weeks based on serology."]]},
-        { h: "Infectious bronchitis (classic and Egyptian Variant 2)", tags: ["broiler", "layer", "breeder"], rows: [
+        { img: "d-ib", h: "Infectious bronchitis (classic and Egyptian Variant 2)", tags: ["broiler", "layer", "breeder"], rows: [
           ["Cause", "Avian coronavirus. Classic strains and the EGY/Variant II lineage circulate; a classic vaccine alone does not protect well enough against the variant."],
           ["Signs", "Rales and sneezing; some strains cause nephritis (white urates and deaths). In layers: egg drop, thin or misshapen shells, watery albumen. Infection of very young chicks can cause ‘false layers’."],
           ["Prevention", "A classic vaccine (e.g. H120) combined with a suitable variant vaccine, correct spacing of live vaccines, and a killed vaccine before lay in layers and breeders."]]},
-        { h: "Gumboro / infectious bursal disease (very virulent IBD)", tags: ["broiler", "layer"], rows: [
+        { img: "d-ibd", h: "Gumboro / infectious bursal disease (very virulent IBD)", tags: ["broiler", "layer"], rows: [
           ["Cause", "A virus that destroys the bursa of Fabricius (the immune organ); very common in Egypt."],
           ["Signs", "Usually 3–6 weeks of age: depression, ruffled feathers, white watery diarrhoea, haemorrhages in thigh and breast muscle, swollen then atrophied bursa. The worst effect is immunosuppression and failure of other vaccines."],
           ["Prevention", "Good maternal immunity from breeders, timing vaccination by ELISA, and using intermediate-plus, immune-complex or vector (HVT-IBD) vaccines at the hatchery."]]},
-        { h: "Marek’s disease", tags: ["layer", "breeder"], rows: [
+        { img: "d-marek", h: "Marek’s disease", tags: ["layer", "breeder"], rows: [
           ["Cause", "A tumour-causing herpesvirus, most serious in long-lived birds."],
           ["Signs", "Paralysis of a leg or wing (‘split legs’), grey eye, internal tumours, ongoing mortality."],
           ["Prevention", "Day-old vaccination at the hatchery (HVT + Rispens) and strict hygiene during brooding, because early exposure before immunity develops is the danger."]]},
@@ -48,23 +58,23 @@ window.GUIDE.en = {
           ["Cause", "Fowl adenoviruses. Serotypes 8a and 2/11 are widespread in Egypt, with emerging 1, 3 and 8b; highest in Delta governorates and in broilers."],
           ["Signs", "Sudden mortality at 3–6 weeks, pale or yellow friable liver with haemorrhages, fluid around the heart in hydropericardium syndrome."],
           ["Prevention", "Breeder vaccination (with a matching serotype where available) and control of immunosuppression – Gumboro, chicken anaemia and mycotoxins – plus biosecurity."]]},
-        { h: "Chicken infectious anaemia (CAV)", tags: ["broiler", "breeder"], rows: [
+        { img: "d-cav", h: "Chicken infectious anaemia (CAV)", tags: ["broiler", "breeder"], rows: [
           ["Cause", "A virus transmitted vertically from breeders to chicks."],
           ["Signs", "Anaemia and paleness, ‘blue wing’ (skin haemorrhages), immunosuppression that opens the door to adenovirus and E. coli."],
           ["Prevention", "Vaccinate breeders well before the start of lay."]]},
-        { h: "Infectious laryngotracheitis (ILT)", tags: ["layer", "breeder", "broiler"], rows: [
+        { img: "d-ilt", h: "Infectious laryngotracheitis (ILT)", tags: ["layer", "breeder", "broiler"], rows: [
           ["Signs", "Severe gasping with extended neck, coughing up bloody mucus, conjunctivitis, egg drop."],
           ["Prevention", "Vaccine only in endemic areas and under veterinary supervision (live or vector vaccine), with biosecurity and no mixing of ages."]]},
         { h: "Avian metapneumovirus (swollen head syndrome)", tags: ["broiler", "layer", "breeder"], rows: [
           ["Signs", "Swollen head and sinuses, watery eyes, mild nervous signs, usually with secondary E. coli; egg drop and shell defects in layers."],
           ["Prevention", "Vaccination of layers and breeders (live then killed), good ventilation and ammonia control."]]},
-        { h: "Egg drop syndrome (EDS-76)", tags: ["layer", "breeder"], rows: [
+        { img: "d-eds", h: "Egg drop syndrome (EDS-76)", tags: ["layer", "breeder"], rows: [
           ["Signs", "Birds look healthy but lay thin-shelled, shell-less or pale eggs, with a production drop."],
           ["Prevention", "Killed vaccine (usually combined with ND and IB) before lay."]]},
-        { h: "Fowl pox", tags: ["layer", "breeder"], rows: [
+        { img: "d-pox", h: "Fowl pox", tags: ["layer", "breeder"], rows: [
           ["Signs", "Dry form: scabs on comb and wattles. Wet form: yellow membranes in the mouth and throat that can suffocate the bird."],
           ["Prevention", "Wing-web vaccination and mosquito control."]]},
-        { h: "Avian encephalomyelitis (AE)", tags: ["layer", "breeder"], rows: [
+        { img: "d-ae", h: "Avian encephalomyelitis (AE)", tags: ["layer", "breeder"], rows: [
           ["Signs", "Head and neck tremors and incoordination in chicks of 1–3 weeks; a temporary egg drop in layers."],
           ["Prevention", "Vaccinate pullets at 10–14 weeks, before lay; essential in breeders to protect the chicks."]]},
         { h: "Reovirus (tenosynovitis & malabsorption)", tags: ["broiler", "breeder"], rows: [
@@ -73,15 +83,15 @@ window.GUIDE.en = {
       ]},
       { t: "h", x: "Bacterial diseases" },
       { t: "acc", items: [
-        { h: "Colibacillosis (E. coli)", tags: ["broiler", "layer", "breeder"], rows: [
+        { img: "d-ecoli", h: "Colibacillosis (E. coli)", tags: ["broiler", "layer", "breeder"], rows: [
           ["Why it matters", "The most common bacterial disease, usually secondary to respiratory viruses, mycoplasma or high ammonia."],
           ["Signs", "Airsacculitis, white fibrin on heart and liver, navel infection in chicks, salpingitis and peritonitis in layers."],
           ["Control", "Hatchery and water hygiene, good ventilation, control of the primary cause, live E. coli vaccines in layers and breeders. Antibiotics only after sensitivity testing, as resistance in Egypt is very high."]]},
-        { h: "Mycoplasma (MG and MS)", tags: ["broiler", "layer", "breeder"], rows: [
+        { img: "d-mg", h: "Mycoplasma (MG and MS)", tags: ["broiler", "layer", "breeder"], rows: [
           ["Signs", "MG: chronic respiratory disease (rales, swollen sinuses, egg drop). MS: lameness, synovitis and eggshell apex abnormalities."],
           ["Note", "Transmitted vertically from breeders, so mycoplasma-free breeder flocks are the foundation."],
           ["Control", "Monitored free breeders, live or killed vaccines in layers, and effective drugs such as tylosin, tilmicosin, tiamulin and tylvalosin."]]},
-        { h: "Salmonella (pullorum, typhoid, SE and ST)", tags: ["breeder", "layer", "broiler"], rows: [
+        { img: "d-salmonella", h: "Salmonella (pullorum, typhoid, SE and ST)", tags: ["breeder", "layer", "broiler"], rows: [
           ["Signs", "Pullorum: chick deaths with white diarrhoea and pasted vents. Typhoid: deaths in adults with bronze liver. SE and ST: a human health risk through eggs and meat."],
           ["Control", "Testing breeders and removing positives, salmonella vaccines, rodent control, and heat- or acid-treated clean feed."]]},
         { h: "Infectious coryza", tags: ["layer", "breeder"], rows: [
@@ -90,30 +100,30 @@ window.GUIDE.en = {
         { h: "ORT (Ornithobacterium)", tags: ["broiler", "breeder"], rows: [
           ["Signs", "Pneumonia and airsacculitis, worse with ND, IB and metapneumovirus."],
           ["Control", "Breeder vaccination; many strains are resistant, so sensitivity testing is needed."]]},
-        { h: "Fowl cholera", tags: ["layer", "breeder"], rows: [
+        { img: "d-cholera", h: "Fowl cholera", tags: ["layer", "breeder"], rows: [
           ["Signs", "Sudden deaths in adult birds, swollen wattles, green diarrhoea."],
           ["Control", "Rodent and wildlife control, vaccination in endemic areas, treatment based on sensitivity."]]},
-        { h: "Necrotic enteritis", tags: ["broiler"], rows: [
+        { img: "d-ne", h: "Necrotic enteritis", tags: ["broiler"], rows: [
           ["Cause", "Clostridium perfringens, usually after coccidiosis or with high-protein feed or wheat/barley diets without enzymes."],
           ["Signs", "Sudden deaths at 2–6 weeks, dark diarrhoea, distended intestine with an ulcerated lining. The subclinical form ruins FCR."],
           ["Prevention", "Coccidiosis control, gut-health products (probiotics, organic acids, phytogenics) and dry litter."]]}
       ]},
       { t: "h", x: "Parasitic, fungal, nutritional and environmental" },
       { t: "acc", items: [
-        { h: "Coccidiosis", tags: ["broiler", "layer", "breeder"], rows: [
+        { img: "d-cocci", h: "Coccidiosis", tags: ["broiler", "layer", "breeder"], rows: [
           ["Signs", "Bloody droppings (especially caecal E. tenella), poor growth and worse FCR even without visible signs."],
           ["Prevention", "In-feed anticoccidials in shuttle or rotation programmes, or coccidiosis vaccine, plus dry litter. Treatment with amprolium, toltrazuril or sulfonamides under veterinary supervision."],
           ["Our products", "Emistop Premix Vet (diclazuril) and Madumix Vet (maduramycin)."]]},
-        { h: "Internal worms", tags: ["layer", "breeder"], rows: [
+        { img: "d-worms", h: "Internal worms", tags: ["layer", "breeder"], rows: [
           ["Types", "Ascaridia, Heterakis, Capillaria and tapeworms, especially on floor systems."],
           ["Control", "Regular deworming with a product registered for layers, and control of beetles and insects that act as intermediate hosts."]]},
-        { h: "Red mite and external parasites", tags: ["layer", "breeder"], rows: [
+        { img: "d-mite", h: "Red mite and external parasites", tags: ["layer", "breeder"], rows: [
           ["Signs", "Anaemia, night-time restlessness, egg drop and blood spots on eggs."],
           ["Control", "Cleaning between flocks and acaricides registered for use in layers only."]]},
-        { h: "Aspergillosis (fungal pneumonia)", tags: ["broiler", "layer", "breeder"], rows: [
+        { img: "d-asper", h: "Aspergillosis (fungal pneumonia)", tags: ["broiler", "layer", "breeder"], rows: [
           ["Signs", "Open-mouth breathing in young chicks, yellow nodules in lungs and air sacs."],
           ["Prevention", "Dry, mould-free litter and hatchery hygiene. No economically effective treatment."]]},
-        { h: "Mycotoxins", tags: ["broiler", "layer", "breeder"], rows: [
+        { img: "d-myco", h: "Mycotoxins", tags: ["broiler", "layer", "breeder"], rows: [
           ["Types", "Aflatoxin, ochratoxin, fumonisin, DON and T-2, mostly from poorly stored maize and raw materials."],
           ["Effect", "Immunosuppression and vaccine failure, liver and kidney damage, oral lesions, poorer growth and egg production."],
           ["Prevention", "Maize below 14% moisture, good storage, mould inhibitor in feed, and toxin binders (clays, zeolite, yeast cell wall)."],
@@ -127,7 +137,7 @@ window.GUIDE.en = {
       ]}
     ]},
 
-  { id: "care", icon: "shield", title: "Husbandry & disinfection", sub: "Brooding · Ventilation · Biosecurity",
+  { id: "care", img: "b-care", icon: "shield", title: "Husbandry & disinfection", sub: "Brooding · Ventilation · Biosecurity",
     intro: "Prevention is cheaper than treatment. Most farm problems start with a mistake in brooding, ventilation or house hygiene between flocks.",
     blocks: [
       { t: "h", x: "Preparing for chick placement" },
@@ -146,6 +156,7 @@ window.GUIDE.en = {
         ["Week 4", "22–24 °C", ""],
         ["After", "19–21 °C", "Perceived temperature depends on humidity and air speed"]
       ]},
+      { t: "gallery", items: [["g-chicks", "Broiler chicks on clean, dry litter in the first days of brooding"], ["g-layers", "A caged layer house: hygiene and ventilation underpin production"], ["g-eggs", "Table eggs: shell quality reflects health and nutrition"]] },
       { t: "h", x: "Daily husbandry essentials" },
       { t: "cards", items: [
         ["Ventilation", "Ammonia below 10 ppm and never above 20–25 ppm; CO2 below 3,000 ppm. Minimum ventilation is needed even in cold weather."],
@@ -199,9 +210,10 @@ window.GUIDE.en = {
       { t: "warn", x: "Never mix two disinfectants (e.g. chlorine with acids or ammonia), and respect the label concentration and contact time." }
     ]},
 
-  { id: "vaccines", icon: "syringe", title: "Vaccination programmes", sub: "Broilers · Layers · Breeders",
+  { id: "vaccines", img: "b-vaccines", icon: "syringe", title: "Vaccination programmes", sub: "Broilers · Layers · Breeders",
     intro: "The programmes below are example programmes commonly used in Egypt. The right programme for your farm depends on maternal immunity (breeder certificate or chick testing), the diseases in your area and serology results (HI or ELISA).",
     blocks: [
+      { t: "gallery", items: [["g-vacc3", "Subcutaneous injection with clean, sterile equipment"], ["g-vacc2", "Vaccinating bird by bird ensures every bird gets its dose"], ["g-syringe", "Keep vaccine at 2–8 °C and prepare it just before use"]] },
       { t: "table", cap: "Example broiler programme", head: ["Age", "Vaccine", "Route", "Notes"], rows: [
         ["Day 1 (hatchery)", "ND + classic IB (live)", "Spray", "Sometimes a vector vaccine (HVT-ND or HVT-IBD) by injection or in ovo"],
         ["Days 7–10", "Killed H5 influenza (± H9 ± ND)", "Subcutaneous, neck", "Dose per leaflet (usually 0.3–0.5 ml)"],
@@ -245,7 +257,7 @@ window.GUIDE.en = {
       { t: "warn", x: "Too many or too closely spaced live respiratory vaccines cause reactions and respiratory stress that open the door to E. coli. A balanced programme matters more than the number of vaccines." }
     ]},
 
-  { id: "antibiotics", icon: "pill", title: "Antibiotics & withdrawal periods", sub: "Responsible use",
+  { id: "antibiotics", img: "b-antibiotics", icon: "pill", title: "Antibiotics & withdrawal periods", sub: "Responsible use",
     intro: "The withdrawal period is the time between the last dose and slaughter or egg use, so that no drug residues reach consumers. Values in the table are the ranges commonly seen on product labels internationally; the binding value is the one on the leaflet of the product in your hand.",
     blocks: [
       { t: "h", x: "Rules for responsible use" },
@@ -268,12 +280,16 @@ window.GUIDE.en = {
         ["Tiamulin", "Pleuromutilins", "Mycoplasma MG and MS", "2–5 days", "Some products 0 days"],
         ["Lincomycin + spectinomycin", "Lincosamides", "Mycoplasma, E. coli, clostridia", "About 5 days", "Usually not allowed"],
         ["Enrofloxacin", "Fluoroquinolones", "E. coli, mycoplasma, salmonella", "7–9 days", "Prohibited in layers"],
+        ["Levofloxacin", "Fluoroquinolones (3rd generation)", "E. coli, mycoplasma, salmonella, coryza", "Per label", "Prohibited in layers"],
+        ["Norfloxacin", "Fluoroquinolones", "E. coli, salmonella, gut infections", "Per label", "Prohibited in layers"],
+        ["Fosfomycin", "Phosphonates", "E. coli, salmonella, secondary gut and respiratory infections (sometimes with tylosin)", "Per label", "Usually not allowed"],
         ["Colistin", "Polymyxins", "Gut E. coli and salmonella", "1–7 days", "Some products 0 days"],
         ["Florfenicol", "Phenicols", "E. coli, ORT, coryza", "About 5 days (where licensed)", "Not allowed"],
         ["Sulfonamide + trimethoprim", "Sulfonamides", "Coryza, cholera, E. coli, coccidiosis", "5–12 days", "Usually not allowed"],
         ["Neomycin", "Aminoglycosides", "Gut infections (not absorbed)", "Per label", "Per label"],
         ["Gentamicin", "Aminoglycosides", "Hatchery injection only", "Per label", "—"]
       ]},
+      { t: "warn", x: "Enrofloxacin, levofloxacin and norfloxacin belong to the same group and share resistance: if one fails, the others usually fail too, so don’t try them one after another. Levofloxacin is primarily a human medicine and is not licensed for animals in many countries, and fosfomycin is also classed by the WHO as critically important for human medicine. Use all four only after sensitivity testing." },
       { t: "warn", x: "Important: tiamulin must not be used with monensin, salinomycin or narasin (in feed) during treatment or for at least 7 days before and after, as it causes a toxicosis like ionophore poisoning (paralysis and death). With maduramycin it can cause temporary growth depression. Tell the feed mill before using it." },
       { t: "h", x: "Substances banned in food-producing animals" },
       { t: "cards", items: [
@@ -284,10 +300,10 @@ window.GUIDE.en = {
       ]}
     ]},
 
-  { id: "herbs", icon: "leaf", title: "Herbs & plant extracts", sub: "Prevention and support",
+  { id: "herbs", img: "b-herbs", icon: "leaf", title: "Herbs & plant extracts", sub: "Prevention and support",
     intro: "Phytogenic additives are a promising alternative to growth promoters, with antibacterial, antioxidant and immune-supporting effects. But study results are inconsistent, doses are not standardised and product quality varies. They complement biosecurity and vaccination; they do not replace treatment.",
     blocks: [
-      { t: "table", cap: "Commonly used herbs and extracts", head: ["Herb / extract", "Active compound", "Uses", "Strength of evidence"], rows: [
+      { t: "table", view: "cards", imgs: ["h-thyme", "h-garlic", "h-nigella", "h-turmeric", "h-cinnamon", "h-ginger", "h-yucca", "h-quillaja", "h-artemisia", "h-milkthistle", "h-eucalyptus", "h-anise", "h-rosemary", "h-greentea", "h-moringa", "h-paprika", "h-licorice", "h-echinacea"], cap: "Commonly used herbs and extracts", head: ["Herb / extract", "Active compound", "Uses", "Strength of evidence"], rows: [
         ["Thyme & oregano", "Thymol, carvacrol", "Antibacterial (clostridia, E. coli), coccidiosis support, gut barrier", "Good"],
         ["Garlic", "Allicin", "Antibacterial, immune support, resistance to E. acervulina", "Moderate"],
         ["Black seed (Nigella sativa)", "Thymoquinone", "Immune support, antioxidant, liver protection", "Moderate"],
@@ -317,7 +333,7 @@ window.GUIDE.en = {
       ]}
     ]},
 
-  { id: "feed", icon: "grain", title: "Feed formulation & additives", sub: "Requirements · Ingredients · Additives",
+  { id: "feed", img: "b-feed", icon: "grain", title: "Feed formulation & additives", sub: "Requirements · Ingredients · Additives",
     intro: "Feed is 60–70% of production cost. A correct ration is calculated from actual ingredient analysis and the breed’s requirements, ideally with formulation software and a nutritionist.",
     blocks: [
       { t: "table", cap: "Guide requirements for broilers (corn–soy)", head: ["Nutrient", "Starter (0–10 d)", "Grower (11–24 d)", "Finisher (25 d – sale)"], rows: [
@@ -364,6 +380,7 @@ window.GUIDE.en = {
         ["Minerals", "Limestone for calcium, dicalcium or monocalcium phosphate for phosphorus, salt and bicarbonate for sodium."],
         ["Synthetic amino acids", "Methionine, lysine, threonine and sometimes valine and arginine, to lower total protein without losing performance."]
       ]},
+      { t: "gallery", items: [["f-corn", "Yellow maize: the main energy source"], ["f-soy", "Soybean meal: the main protein source"], ["f-bran", "Wheat bran: fibre and lower energy, used in layer diets"], ["g-feedmill", "A feed mill: even mixing and good storage"]] },
       { t: "h", x: "Types of feed additives" },
       { t: "table", head: ["Additive", "Function", "Examples"], rows: [
         ["Premix", "Essential vitamins and trace minerals", "Vitamins A, D3, E, K and B group; zinc, manganese, iron, copper, selenium, iodine"],
@@ -388,12 +405,12 @@ window.GUIDE.en = {
       ]}
     ]},
 
-  { id: "drugs", icon: "list", title: "Common medicines", sub: "By active ingredient",
+  { id: "drugs", img: "b-drugs", icon: "list", title: "Common medicines", sub: "By active ingredient",
     intro: "Trade names are many and change often, so the active ingredient is what matters. This list groups the most used medicine classes on Egyptian poultry farms and what they are for. Use any medicine under veterinary supervision and according to its leaflet.",
     blocks: [
       { t: "acc", items: [
         { h: "Antibiotics", rows: [
-          ["Most used", "Amoxicillin, doxycycline, tylosin, tilmicosin, tiamulin, enrofloxacin, colistin, florfenicol, trimethoprim-sulfa, lincomycin-spectinomycin."],
+          ["Most used", "Amoxicillin, doxycycline, tylosin, tilmicosin, tiamulin, enrofloxacin, levofloxacin, norfloxacin, fosfomycin, colistin, florfenicol, trimethoprim-sulfa, lincomycin-spectinomycin."],
           ["Details", "See the ‘Antibiotics & withdrawal periods’ tab."]]},
         { h: "Anticoccidials", rows: [
           ["In feed (prevention) – ionophores", "Monensin, salinomycin, narasin, maduramycin, lasalocid, semduramicin."],

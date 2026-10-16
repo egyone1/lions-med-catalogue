@@ -166,21 +166,95 @@
     .g-intro { max-width: 820px; margin: 0 0 14px; color: #3c4658; }
     .g-disc { display: flex; gap: 10px; align-items: flex-start; background: var(--gold-soft); border-radius: 10px; padding: 12px 16px; font-size: .9rem; margin-bottom: 26px; }
     .g-disc svg { flex: none; width: 20px; height: 20px; color: var(--gold); margin-top: 2px; }
-    .gtabs { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 14px; }
-    .gtab { display: flex; align-items: center; gap: 14px; width: 100%; text-align: start; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 16px; cursor: pointer; transition: transform .15s, box-shadow .15s, background .15s; }
-    .gtab:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(13,27,46,.10); border-color: var(--gold); }
-    .gtab .ico { flex: none; width: 50px; height: 50px; border-radius: 50%; background: var(--navy); color: var(--gold); display: flex; align-items: center; justify-content: center; }
-    .gtab .ico svg { width: 26px; height: 26px; }
+    .gtabs { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+    .gtab { display: flex; flex-direction: column; width: 100%; text-align: start; font: inherit; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 16px; padding: 0; overflow: hidden; cursor: pointer; transition: transform .15s, box-shadow .15s, background .15s; }
+    .gtab:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(13,27,46,.14); border-color: var(--gold); }
+    .gt-img { position: relative; display: block; aspect-ratio: 16 / 9; background: var(--navy-2); }
+    .gt-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .gtab:hover .gt-img img { transform: scale(1.05); }
+    .gt-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,27,46,.55), transparent 55%); }
+    .gtab .ico { position: absolute; z-index: 1; bottom: -22px; inset-inline-start: 16px; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: var(--gold); border: 3px solid var(--paper); display: flex; align-items: center; justify-content: center; }
+    .gtab .ico svg { width: 24px; height: 24px; }
+    .gt-body { display: flex; align-items: center; gap: 10px; padding: 28px 16px 16px; }
     .gtab .txt { flex: 1; min-width: 0; }
     .gtab .num { display: block; color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .14em; }
-    .gtab b { display: block; font-size: 1.02rem; line-height: 1.35; }
+    .gtab b { display: block; font-size: 1.05rem; line-height: 1.35; }
     .gtab small { display: block; color: var(--muted); font-size: .82rem; margin-top: 2px; }
     .gtab .chev { flex: none; width: 20px; height: 20px; color: var(--gold); transition: transform .2s; }
     html[dir="rtl"] .gtab .chev { transform: scaleX(-1); }
-    .gtab[aria-expanded="true"] { background: var(--navy); color: #fff; border-color: var(--gold); box-shadow: 0 8px 22px rgba(13,27,46,.22); }
-    .gtab[aria-expanded="true"] .ico { background: var(--gold); color: var(--navy); }
+    .gtab[aria-expanded="true"] { background: var(--navy); color: #fff; border-color: var(--gold); box-shadow: 0 10px 24px rgba(13,27,46,.25); }
+    .gtab[aria-expanded="true"] .ico { background: var(--gold); color: var(--navy); border-color: var(--navy); }
     .gtab[aria-expanded="true"] small { color: rgba(255,255,255,.7); }
     .gtab[aria-expanded="true"] .chev { transform: rotate(90deg); }
+    /* search */
+    .gsearch { background: var(--navy); color: #fff; border-radius: 16px; padding: 22px; margin: 6px 0 22px; box-shadow: 0 10px 26px rgba(13,27,46,.18); }
+    .gs-box { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 12px; padding: 4px 6px 4px 14px; border: 2px solid transparent; }
+    html[dir="rtl"] .gs-box { padding: 4px 14px 4px 6px; }
+    .gs-box:focus-within { border-color: var(--gold); }
+    .gs-box svg { flex: none; width: 22px; height: 22px; color: var(--gold); }
+    .gs-box input { flex: 1; min-width: 0; border: 0; outline: 0; font: inherit; font-size: 1.05rem; padding: 12px 0; color: var(--ink); background: transparent; }
+    .gs-box input::-webkit-search-cancel-button { display: none; }
+    .gs-clear { flex: none; border: 0; background: var(--paper); color: var(--muted); border-radius: 8px; padding: 8px 12px; font: inherit; font-size: .82rem; cursor: pointer; }
+    .gs-hint { margin: 8px 2px 0; font-size: .82rem; opacity: .7; }
+    .gs-pop { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 12px; }
+    .gs-pop > span { font-size: .85rem; opacity: .8; margin-inline-end: 4px; }
+    .qchip { font: inherit; font-size: .84rem; border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.06); color: #fff; border-radius: 999px; padding: 5px 13px; cursor: pointer; }
+    .qchip:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    #gres:not(:empty) { margin-top: 16px; }
+    .gs-meta { font-size: .85rem; opacity: .8; margin-bottom: 8px; }
+    .gs-list { display: grid; gap: 8px; }
+    .gs-item { display: flex; gap: 12px; align-items: flex-start; width: 100%; text-align: start; font: inherit; color: var(--ink); background: #fff; border: 0; border-radius: 12px; padding: 12px 14px; cursor: pointer; transition: transform .12s, box-shadow .12s; }
+    .gs-item:hover, .gs-item:focus-visible { transform: translateY(-1px); box-shadow: 0 0 0 2px var(--gold); outline: none; }
+    .gs-item .th { flex: none; width: 54px; height: 54px; border-radius: 10px; overflow: hidden; background: var(--paper); display: flex; align-items: center; justify-content: center; color: var(--gold); }
+    .gs-item .th img { width: 100%; height: 100%; object-fit: cover; }
+    .gs-item .th svg { width: 26px; height: 26px; }
+    .gs-item .bd { flex: 1; min-width: 0; }
+    .gs-item .where { display: block; font-size: .74rem; font-weight: 700; color: var(--gold); letter-spacing: .04em; }
+    .gs-item b { display: block; font-size: 1rem; }
+    .gs-item .sn { display: block; font-size: .88rem; color: #4a5468; margin-top: 2px; }
+    .gs-none { background: rgba(255,255,255,.08); border-radius: 10px; padding: 14px; font-size: .95rem; }
+    mark { background: #f6df9d; color: inherit; border-radius: 3px; padding: 0 2px; }
+    .flash { animation: flash 2.2s ease; }
+    @keyframes flash { 0%, 35% { box-shadow: 0 0 0 3px var(--gold); background: #fff8e6; } 100% { box-shadow: none; } }
+    tr.flash td { animation: flash 2.2s ease; }
+    /* panel hero, images, galleries */
+    .gp-hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px; align-items: center; margin-bottom: 10px; }
+    .gp-hero > img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
+    .gp-top { display: flex; justify-content: flex-end; margin: -8px 0 8px; }
+    .acc-th { flex: none; width: 44px; height: 44px; border-radius: 10px; overflow: hidden; background: var(--paper); }
+    .acc-th img { width: 100%; height: 100%; object-fit: cover; }
+    .acc-fig { float: inline-end; width: 220px; margin: 12px 0 10px; margin-inline-start: 18px; }
+    .acc-fig img { width: 100%; height: auto; border-radius: 10px; }
+    .acc dl::after { content: ""; display: block; clear: both; }
+    figcaption, .credit { font-size: .72rem; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+    .credit a { color: inherit; }
+    .hcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin: 14px 0; }
+    .hcard { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, box-shadow .15s; }
+    .hcard:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(13,27,46,.10); }
+    .hcard > img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--paper); }
+    .hcard .hb { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+    .hcard h5 { margin: 0; font-size: 1.05rem; color: var(--navy); }
+    .hcard .cmp { font-size: .8rem; color: var(--gold); font-weight: 700; }
+    .hcard p { margin: 0; font-size: .9rem; flex: 1; }
+    .ev { align-self: flex-start; font-size: .74rem; font-weight: 700; border-radius: 999px; padding: 3px 10px; }
+    .ev.good { background: #e3f4e8; color: #1e7a3c; } .ev.mid { background: #fdf2d8; color: #8a6412; } .ev.low { background: #eef0f3; color: #5b6475; }
+    .ggal { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 18px 0; }
+    .ggal figure { margin: 0; background: var(--paper); border-radius: 12px; overflow: hidden; }
+    .ggal img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+    .ggal figcaption { padding: 8px 12px 10px; font-size: .86rem; color: var(--ink); }
+    .ggal .credit { display: block; margin-top: 2px; }
+    @media (max-width: 760px) {
+      .gtabs { grid-template-columns: 1fr; gap: 10px; }
+      .gtab { flex-direction: row; align-items: stretch; }
+      .gt-img { flex: none; width: 104px; aspect-ratio: auto; }
+      .gtab .ico { width: 38px; height: 38px; bottom: 8px; inset-inline-start: auto; inset-inline-end: -19px; }
+      .gtab .ico svg { width: 19px; height: 19px; }
+      .gt-body { flex: 1; padding: 12px 14px; padding-inline-start: 28px; }
+      .gp-hero { grid-template-columns: 1fr; gap: 14px; }
+      .gp-hero > img { aspect-ratio: 16 / 9; }
+      .acc-fig { float: none; width: 100%; max-width: 320px; margin: 10px 0; }
+      .gsearch { padding: 16px; }
+    }
     .gpanel { margin-top: 20px; background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--gold); border-radius: 14px; padding: 28px; box-shadow: 0 10px 30px rgba(13,27,46,.08); animation: gin .25s ease; scroll-margin-top: 76px; }
     @keyframes gin { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
     .gp-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
@@ -257,6 +331,7 @@
 
 <script src="guide-ar.js"></script>
 <script src="guide-en.js"></script>
+<script src="guide-img.js"></script>
 <script>
 const TEL = '01002334711', TEL_INTL = '201002334711';
 const WA_ICON = document.querySelector('#fab svg').outerHTML;
@@ -572,17 +647,35 @@ const icon = (n) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const G = () => window.GUIDE[lang];
 let openTab = null;
 
+ICONS.search = '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/>';
+ICONS.box = '<path d="M3 7l9-4 9 4-9 4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/>';
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const strip = (s) => String(s).replace(/<[^>]+>/g, '');
+const imgTag = (k, alt = '', eager) => {
+  const m = window.IMG && IMG[k];
+  return m ? `<img src="assets/guide/${k}.jpg" width="${m[0]}" height="${m[1]}" alt="${esc(strip(alt))}"${eager ? '' : ' loading="lazy"'} decoding="async">` : '';
+};
+const credit = (k) => {
+  const m = window.IMG && IMG[k];
+  return m ? `<span class="credit">© <a href="${m[5]}" target="_blank" rel="noopener">${esc(m[3] || 'Wikimedia Commons')}</a> · ${esc(m[4])}</span>` : '';
+};
+
 function guideSection() {
-  const g = G();
+  const g = G(), s = g.search;
   return `<section class="guide" id="guide"><div class="wrap">
     <div class="sec-head"><h2>${g.title}</h2><span class="eyebrow">${g.eyebrow}</span></div>
     <p class="g-intro">${g.intro}</p>
+    <div class="gsearch" role="search">
+      <div class="gs-box">${icon('search')}<input id="gq" type="search" enterkeyhint="search" autocomplete="off" spellcheck="false" placeholder="${esc(s.ph)}" aria-label="${esc(s.ph)}"><button type="button" class="gs-clear" data-gclear hidden>${s.clear} ✕</button></div>
+      <p class="gs-hint">${s.hint}</p>
+      <div class="gs-pop"><span>${s.popularT}</span>${s.popular.map(p => `<button type="button" class="qchip" data-q="${esc(p)}">${p}</button>`).join('')}</div>
+      <div id="gres" aria-live="polite"></div>
+    </div>
     <div class="g-disc">${icon('info')}<span>${g.disclaimer}</span></div>
-    <div class="gtabs" role="tablist">${g.tabs.map((tb, i) => `
+    <div class="gtabs">${g.tabs.map((tb, i) => `
       <button class="gtab" type="button" data-tab="${tb.id}" aria-expanded="false" aria-controls="gpanel">
-        <span class="ico">${icon(tb.icon)}</span>
-        <span class="txt"><span class="num">0${i + 1}</span><b>${tb.title}</b><small>${tb.sub}</small></span>
-        <span class="chev">${icon('chev')}</span>
+        <span class="gt-img">${imgTag(tb.img, tb.title)}<span class="ico">${icon(tb.icon)}</span></span>
+        <span class="gt-body"><span class="txt"><span class="num">0${i + 1}</span><b>${tb.title}</b><small>${tb.sub}</small></span><span class="chev">${icon('chev')}</span></span>
       </button>`).join('')}
     </div>
     <div id="gpanel"></div>
@@ -590,37 +683,56 @@ function guideSection() {
 }
 
 const bidi = (s) => lang === 'ar' ? s.replace(/\(([^()<>؀-ۿ]+)\)/g, '(<bdi>$1</bdi>)') : s;
-function gBlock(b) { return bidi(gBlockRaw(b)); }
-function gBlockRaw(b) {
+function gBlock(b, bi, ti) { return bidi(gBlockRaw(b, `${ti}-${bi}`)); }
+function evClass(s) { return /^(جيدة|Good)/.test(s) ? 'good' : /^(متوسطة|Moderate)/.test(s) ? 'mid' : 'low'; }
+function gBlockRaw(b, p) {
   const g = G(), tagName = Object.fromEntries(g.filters);
   switch (b.t) {
     case 'h': return `<h4>${b.x}</h4>`;
     case 'p': return `<p>${b.x}</p>`;
-    case 'warn': return `<div class="gwarn">${b.x}</div>`;
-    case 'list': return `<ul class="glist">${b.items.map(x => `<li>${x}</li>`).join('')}</ul>`;
-    case 'steps': return `<ol class="gsteps">${b.items.map(x => `<li>${x}</li>`).join('')}</ol>`;
-    case 'cards': return `<div class="gcards">${b.items.map(c => `<div class="gcard"><b>${c[0]}</b><p>${c[1]}</p></div>`).join('')}</div>`;
-    case 'prod': return `<div class="gprod"><span>${b.x}</span>${b.items.map(p => `<a href="#/p/${p[0]}">${p[1]}</a>`).join('')}</div>`;
-    case 'table': return `<div class="tbl"><table>${b.cap ? `<caption>${b.cap}</caption>` : ''}<thead><tr>${b.head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${b.rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
-    case 'acc': return b.items.map(a => `<details class="acc" data-tags="${(a.tags || []).join(' ')}">
-        <summary><span class="nm">${a.h}</span>${a.tags ? `<span class="tags">${a.tags.map(x => `<span class="tag">${tagName[x]}</span>`).join('')}</span>` : ''}</summary>
-        <dl>${a.rows.map(r => `<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('')}</dl>
+    case 'warn': return `<div class="gwarn" data-k="${p}-0">${b.x}</div>`;
+    case 'list': return `<ul class="glist">${b.items.map((x, i) => `<li data-k="${p}-${i}">${x}</li>`).join('')}</ul>`;
+    case 'steps': return `<ol class="gsteps">${b.items.map((x, i) => `<li data-k="${p}-${i}">${x}</li>`).join('')}</ol>`;
+    case 'cards': return `<div class="gcards">${b.items.map((c, i) => `<div class="gcard" data-k="${p}-${i}"><b>${c[0]}</b><p>${c[1]}</p></div>`).join('')}</div>`;
+    case 'prod': return `<div class="gprod"><span>${b.x}</span>${b.items.map(x => `<a href="#/p/${x[0]}">${x[1]}</a>`).join('')}</div>`;
+    case 'gallery': return `<div class="ggal">${b.items.map(x => `<figure>${imgTag(x[0], x[1])}<figcaption>${x[1]}${credit(x[0])}</figcaption></figure>`).join('')}</div>`;
+    case 'table':
+      if (b.view === 'cards') return `${b.cap ? `<h4>${b.cap}</h4>` : ''}<div class="hcards">${b.rows.map((r, i) => `<div class="hcard" data-k="${p}-${i}">${imgTag(b.imgs[i], r[0])}<div class="hb"><h5>${r[0]}</h5><span class="cmp">${r[1]}</span><p>${r[2]}</p><span class="ev ${evClass(r[3])}">${b.head[3]}: ${r[3]}</span>${credit(b.imgs[i])}</div></div>`).join('')}</div>`;
+      return `<div class="tbl"><table>${b.cap ? `<caption>${b.cap}</caption>` : ''}<thead><tr>${b.head.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${b.rows.map((r, i) => `<tr data-k="${p}-${i}">${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'acc': return b.items.map((a, i) => `<details class="acc" data-k="${p}-${i}" data-tags="${(a.tags || []).join(' ')}">
+        <summary>${a.img ? `<span class="acc-th">${imgTag(a.img, a.h)}</span>` : ''}<span class="nm">${a.h}</span>${a.tags ? `<span class="tags">${a.tags.map(x => `<span class="tag">${tagName[x]}</span>`).join('')}</span>` : ''}</summary>
+        <dl>${a.img ? `<figure class="acc-fig">${imgTag(a.img, a.h)}<figcaption>${credit(a.img)}</figcaption></figure>` : ''}${a.rows.map(r => `<div><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('')}</dl>
       </details>`).join('');
   }
   return '';
 }
 
+function tabImages(tb) {
+  const keys = [tb.img];
+  for (const b of tb.blocks) {
+    if (b.imgs) keys.push(...b.imgs);
+    if (b.t === 'gallery') keys.push(...b.items.map(x => x[0]));
+    if (b.t === 'acc') keys.push(...b.items.map(a => a.img));
+  }
+  return [...new Set(keys.filter(k => k && window.IMG && IMG[k]))];
+}
+
 function gPanel(id) {
-  const g = G(), tb = g.tabs.find(x => x.id === id);
+  const g = G(), ti = g.tabs.findIndex(x => x.id === id), tb = g.tabs[ti];
   const hasTags = tb.blocks.some(b => b.t === 'acc' && b.items.some(a => a.tags));
   const urls = window.GUIDE.ar.sources;
   const src = (g.sources || []).map((s, i) => Array.isArray(s) ? s : [s, urls[i][1]]);
+  const imgs = tabImages(tb);
   return `<div class="gpanel">
-    <div class="gp-head"><span class="ico">${icon(tb.icon)}</span><h3>${tb.title}</h3><button class="gp-close" type="button" data-close>${g.close} ✕</button></div>
-    <p class="gp-intro">${bidi(tb.intro)}</p>
+    <div class="gp-top"><button class="gp-close" type="button" data-close>${g.close} ✕</button></div>
+    <div class="gp-hero">${imgTag(tb.img, tb.title, true)}<div>
+      <div class="gp-head"><span class="ico">${icon(tb.icon)}</span><h3>${tb.title}</h3></div>
+      <p class="gp-intro">${bidi(tb.intro)}</p>
+    </div></div>
     ${hasTags ? `<div class="chips"><button class="chip on" type="button" data-f="">${g.all}</button>${g.filters.map(f => `<button class="chip" type="button" data-f="${f[0]}">${f[1]}</button>`).join('')}</div>` : ''}
-    ${tb.blocks.map(gBlock).join('')}
+    ${tb.blocks.map((b, bi) => gBlock(b, bi, ti)).join('')}
     <details class="gsrc"><summary>${g.sourcesT}</summary><ol>${src.map(s => `<li><a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a></li>`).join('')}</ol></details>
+    ${imgs.length ? `<details class="gsrc"><summary>${g.imgT}</summary><ol>${imgs.map(k => `<li><a href="${IMG[k][5]}" target="_blank" rel="noopener">${esc(IMG[k][2])}</a> — ${esc(IMG[k][3] || '')} · ${esc(IMG[k][4])}</li>`).join('')}</ol></details>` : ''}
   </div>`;
 }
 
@@ -634,12 +746,179 @@ function setTab(id, scroll) {
   if (openTab && scroll) panel.firstElementChild.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
+/* ---------- search ---------- */
+const nrm = (s) => strip(s).toLowerCase()
+  .replace(/[ً-ْـٰ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي')
+  .replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+const SYN = [
+  ['جمبورو', 'جامبورو', 'جومبورو', 'gumboro', 'ibd'], ['نيوكاسل', 'نيوكسل', 'نيوكاسيل', 'newcastle'],
+  ['انفلونزا', 'انفلوانزا', 'انفلونزه', 'influenza', 'flu'], ['كوكسيديا', 'كوكسيدا', 'كوكسديا', 'coccidi', 'eimeria'],
+  ['ايكولاي', 'كولاي', 'قولون', 'coli'], ['ميكوبلازما', 'مايكوبلازما', 'مكوبلازما', 'مايكو', 'mycoplasma'],
+  ['سالمونيلا', 'سلمونيلا', 'salmonell'], ['كوريزا', 'زكام', 'coryza'], ['ماريك', 'مارك', 'marek'],
+  ['التهاب شعبي', 'برونكيت', 'شعبي', 'bronchitis'], ['جدري', 'pox'], ['ادينو', 'adeno', 'fadv'],
+  ['انروفلوكساسين', 'انروفلوكسين', 'انرو', 'enro'], ['ليفوفلوكساسين', 'ليفو', 'levo'], ['نورفلوكساسين', 'نورفلوكس', 'norflox'],
+  ['فوسفومايسين', 'فوسفوميسين', 'فوسفوم', 'fosfomy'], ['كوليستين', 'كولستين', 'colistin'], ['تايلوزين', 'تيلوزين', 'tylosin'],
+  ['دوكسيسيكلين', 'دوكسي', 'doxy'], ['اموكسيسيلين', 'اموكسي', 'amoxi'], ['فلورفينيكول', 'فلورفنيكول', 'florfenicol'],
+  ['تيامولين', 'تياميولين', 'tiamulin'], ['سحب', 'withdrawal'], ['تطهير', 'مطهر', 'disinfect'],
+  ['تحصين', 'تطعيم', 'لقاح', 'vaccin'], ['علف', 'علايق', 'عليقه', 'اعلاف', 'feed', 'ration'],
+  ['حبه البركه', 'حبه سودا', 'كمون اسود', 'nigella', 'black seed'], ['زعتر', 'thyme'], ['اوريجانو', 'oregano'], ['ثوم', 'garlic'],
+  ['كركم', 'turmeric', 'curcumin'], ['قرفه', 'cinnamon'], ['زنجبيل', 'ginger'], ['امونيا', 'نشادر', 'ammonia'],
+  ['سموم فطريه', 'افلاتوكسين', 'mycotoxin', 'aflatoxin'], ['ديدان', 'دود', 'worm'], ['حلم', 'قراد', 'mite'],
+  ['تسمين', 'لاحم', 'broiler'], ['بياض', 'layer'], ['امهات', 'breeder'], ['مضاد حيوي', 'مضادات حيويه', 'antibiotic'],
+  ['اسهال', 'زرق', 'diarrh'], ['حراره', 'حراري', 'heat'], ['ضغط', 'stress', 'اجهاد']
+].map(gr => gr.map(nrm));
+const PREF = ['وال', 'بال', 'فال', 'كال', 'لل', 'ال'];
+const stems = (w) => { const out = [w]; for (const p of PREF) if (w.startsWith(p) && w.length - p.length >= 3) out.push(w.slice(p.length)); if (w.startsWith('و') && w.length > 4) out.push(w.slice(1)); return out; };
+
+const IDX = {};
+function buildIndex() {
+  if (IDX[lang]) return IDX[lang];
+  const other = lang === 'ar' ? 'en' : 'ar', A = window.GUIDE[lang], B = window.GUIDE[other], out = [];
+  const add = (e, eo) => out.push({ ...e, th: nrm(e.title + ' ' + (eo ? eo.title : '')), hay: nrm(e.title + ' ' + e.text + ' ' + (eo ? eo.title + ' ' + eo.text : '')) });
+  A.tabs.forEach((tb, ti) => {
+    const tbo = B.tabs[ti];
+    add({ tab: tb.id, k: '', title: tb.title, text: tb.intro + ' ' + tb.sub, img: tb.img, w: 2 }, { title: tbo.title, text: tbo.intro });
+    tb.blocks.forEach((b, bi) => {
+      const bo = tbo.blocks[bi] || {}, p = `${ti}-${bi}`, base = { tab: tb.id };
+      const pick = (arr, i) => (arr || [])[i];
+      if (b.t === 'acc') b.items.forEach((a, i) => { const o = pick(bo.items, i);
+        add({ ...base, k: `${p}-${i}`, title: a.h, text: a.rows.map(r => r.join(' ')).join(' '), img: a.img, w: 3 }, o && { title: o.h, text: o.rows.map(r => r.join(' ')).join(' ') }); });
+      if (b.t === 'table') b.rows.forEach((r, i) => { const o = pick(bo.rows, i);
+        add({ ...base, k: `${p}-${i}`, title: r[0], text: (b.cap || '') + ' ' + r.slice(1).map((c, j) => (b.head[j + 1] || '') + ': ' + c).join(' · '), img: b.imgs && b.imgs[i], w: 2 }, o && { title: o[0], text: (bo.cap || '') + ' ' + o.slice(1).join(' ') }); });
+      if (b.t === 'cards') b.items.forEach((c, i) => { const o = pick(bo.items, i); add({ ...base, k: `${p}-${i}`, title: c[0], text: c[1], w: 1 }, o && { title: o[0], text: o[1] }); });
+      if (b.t === 'list' || b.t === 'steps') b.items.forEach((x, i) => { const o = pick(bo.items, i), t = strip(x); add({ ...base, k: `${p}-${i}`, title: t.length > 70 ? t.slice(0, 68) + '…' : t, text: x, w: 1 }, o && { title: '', text: o }); });
+      if (b.t === 'warn') add({ ...base, k: `${p}-0`, title: '⚠ ' + tb.title, text: b.x, w: 1 }, bo.x && { title: '', text: bo.x });
+    });
+  });
+  for (const id in P) {
+    const d = P[id][lang], o = P[id][other], txt = (x) => [x.sub, x.head, x.tag, x.comp.map(c => c.join(' ')).join(' '), x.secs.map(s => s.flat(2).join(' ')).join(' ')].join(' ');
+    add({ href: '#/p/' + id, title: P[id].name, text: txt(d), pimg: P[id].img, w: 2 }, { title: '', text: txt(o) });
+  }
+  const vocab = new Set(); out.forEach(e => e.hay.split(' ').forEach(w => w.length > 2 && vocab.add(w)));
+  return (IDX[lang] = { items: out, vocab: [...vocab] });
+}
+
+function lev(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]; let best = i;
+    for (let j = 1; j <= b.length; j++) { cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); best = Math.min(best, cur[j]); }
+    if (best > max) return max + 1; prev = cur;
+  }
+  return prev[b.length];
+}
+
+function parseQuery(q) {
+  let s = ' ' + nrm(q) + ' ';
+  const toks = [];
+  for (const gr of SYN) for (const v of gr) if (v.includes(' ') && s.includes(' ' + v + ' ')) { toks.push({ alts: gr, raw: v }); s = s.replace(' ' + v + ' ', ' '); }
+  for (const w of s.split(' ').filter(x => x.length > 1)) {
+    let alts = stems(w);
+    for (const gr of SYN) if (alts.some(a => a.length >= 3 && gr.some(v => !v.includes(' ') && (v.startsWith(a) || a.startsWith(v) && v.length >= 3)))) alts = alts.concat(gr);
+    toks.push({ alts: [...new Set(alts)], raw: w });
+  }
+  return toks;
+}
+
+function search(q) {
+  const { items, vocab } = buildIndex();
+  let toks = parseQuery(q), fuzzy = false;
+  if (!toks.length) return { res: [], toks, fuzzy };
+  const hit = (e, t) => t.alts.some(a => e.hay.includes(a));
+  // fuzzy-correct tokens that match nothing
+  toks = toks.map(t => {
+    if (items.some(e => hit(e, t))) return t;
+    const w = t.raw, max = w.length >= 7 ? 2 : w.length >= 4 ? 1 : 0;
+    if (!max) return t;
+    let best = null, bd = max + 1;
+    for (const v of vocab) { const d = Math.min(lev(w, v, max), v.length > w.length ? lev(w, v.slice(0, w.length), max) : max + 1); if (d < bd) { bd = d; best = v; } }
+    if (best) { fuzzy = true; return { alts: [best], raw: best }; }
+    return t;
+  });
+  const score = (e) => {
+    let s = 0, n = 0;
+    for (const t of toks) {
+      const a = t.alts.find(x => e.hay.includes(x));
+      if (!a) continue;
+      n++; s += 3;
+      if (t.alts.some(x => e.th.includes(x))) s += 10;
+      if (t.alts.some(x => (' ' + e.hay).includes(' ' + x))) s += 2;
+    }
+    return { s: s + e.w + (n === toks.length ? 50 : 0), n };
+  };
+  let res = items.map(e => ({ e, ...score(e) })).filter(r => r.n === toks.length);
+  if (res.length < 5 && toks.length > 1) { const more = items.map(e => ({ e, ...score(e) })).filter(r => r.n > 0 && r.n < toks.length).sort((a, b) => b.s - a.s); if (!res.length) fuzzy = true; res.sort((a, b) => b.s - a.s); res = res.concat(more); }
+  res.sort((a, b) => b.s - a.s);
+  return { res: res.slice(0, 25), toks, fuzzy, total: res.length };
+}
+
+function hlRegex(toks) {
+  const AR = { 'ا': '[اأإآٱ]', 'ه': '[هة]', 'ي': '[يى]', 'و': '[وؤ]' };
+  const parts = [];
+  for (const t of toks) for (const a of t.alts) if (a.length >= 2) parts.push([...a].map(c => (AR[c] || c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) + '[\\u064B-\\u0652\\u0640]*').join(''));
+  return parts.length ? new RegExp('(' + parts.sort((a, b) => b.length - a.length).join('|') + ')', 'giu') : null;
+}
+const hl = (s, re) => re ? esc(s).replace(re, '<mark>$1</mark>') : esc(s);
+function snippet(text, re) {
+  const t = strip(text).replace(/\s+/g, ' ').trim();
+  let i = 0;
+  if (re) { re.lastIndex = 0; const m = re.exec(t); if (m) i = Math.max(0, m.index - 50); }
+  const s = (i ? '… ' : '') + t.slice(i, i + 150) + (t.length > i + 150 ? ' …' : '');
+  return hl(s, re);
+}
+
+function renderResults(q) {
+  const box = document.getElementById('gres'), clr = document.querySelector('[data-gclear]');
+  if (!box) return;
+  if (clr) clr.hidden = !q;
+  if (nrm(q).length < 2) { box.innerHTML = ''; return; }
+  const g = G(), S = g.search, { res, toks, fuzzy, total } = search(q), re = hlRegex(toks);
+  if (!res.length) { box.innerHTML = `<div class="gs-none">${S.none}</div>`; return; }
+  const tabOf = (id) => g.tabs.find(t => t.id === id);
+  box.innerHTML = `<div class="gs-meta">${fuzzy ? S.fuzzy + ' ' : ''}${total} ${S.count}</div><div class="gs-list">${res.map(({ e }) => {
+    const tb = e.tab && tabOf(e.tab);
+    const th = e.img ? imgTag(e.img, e.title) : e.pimg ? `<img src="assets/${e.pimg}" alt="" loading="lazy">` : icon(tb ? tb.icon : 'box');
+    return `<button type="button" class="gs-item" ${e.href ? `data-href="${e.href}"` : `data-tab="${e.tab}" data-k="${e.k}"`}>
+      <span class="th">${th}</span>
+      <span class="bd"><span class="where">${tb ? tb.title : S.products}</span><b>${hl(strip(e.title), re)}</b>${strip(e.text).trim() === strip(e.title).trim() ? '' : `<span class="sn">${snippet(e.text, re)}</span>`}</span>
+    </button>`;
+  }).join('')}</div>`;
+}
+
+function goTo(tab, k) {
+  setTab(tab, !k);
+  if (!k) return;
+  const el = document.querySelector(`#gpanel [data-k="${k}"]`);
+  if (!el) return;
+  if (el.tagName === 'DETAILS') el.open = true;
+  el.hidden = false;
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+}
+
+let qTimer = null;
+document.getElementById('app').addEventListener('input', (ev) => {
+  if (ev.target.id !== 'gq') return;
+  clearTimeout(qTimer); qTimer = setTimeout(() => renderResults(ev.target.value), 120);
+});
+document.getElementById('app').addEventListener('keydown', (ev) => {
+  if (ev.target.id !== 'gq') return;
+  if (ev.key === 'Enter') { ev.preventDefault(); renderResults(ev.target.value); const f = document.querySelector('.gs-item'); if (f) f.click(); }
+  if (ev.key === 'Escape') { ev.target.value = ''; renderResults(''); }
+});
+
 document.getElementById('app').addEventListener('click', (ev) => {
+  const qc = ev.target.closest('.qchip');
+  if (qc) { const inp = document.getElementById('gq'); inp.value = qc.dataset.q; renderResults(inp.value); return; }
+  if (ev.target.closest('[data-gclear]')) { const inp = document.getElementById('gq'); inp.value = ''; renderResults(''); inp.focus(); return; }
+  const it = ev.target.closest('.gs-item');
+  if (it) { if (it.dataset.href) location.hash = it.dataset.href; else goTo(it.dataset.tab, it.dataset.k); return; }
   const tab = ev.target.closest('.gtab');
   if (tab) return setTab(tab.dataset.tab === openTab ? null : tab.dataset.tab, true);
   if (ev.target.closest('[data-close]')) { setTab(null); document.getElementById('guide').scrollIntoView({ behavior: 'smooth' }); return; }
   const chip = ev.target.closest('.chip');
-  if (chip) {
+  if (chip && chip.closest('.gpanel')) {
     const p = chip.closest('.gpanel'), f = chip.dataset.f;
     p.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c === chip));
     p.querySelectorAll('.acc[data-tags]').forEach(a => { a.hidden = !!f && a.dataset.tags !== '' && !a.dataset.tags.split(' ').includes(f); });
