@@ -395,7 +395,7 @@ window.GUIDE.en = {
         ["Pigments", "Yolk colour", "Canthaxanthin, paprika extract, carotenoids"],
         ["Electrolytes & anti-stress", "Heat and stress", "Betaine, bicarbonate, potassium chloride, vitamin C"]
       ]},
-      { t: "prod", x: "Lions Med products among these additives:", items: [["emistop", "Emistop Premix Vet"], ["madumix", "Madumix Vet"], ["echomos", "Echomos"], ["imerys", "Imerys BZF"], ["pgb", "PGB Premix"], ["yeast", "Extra Yeast"]] },
+      { t: "prod", x: "Birds Med (BMC) products among these additives:", items: [["emistop", "Emistop Premix Vet"], ["madumix", "Madumix Vet"], ["echomos", "Echomos"], ["imerys", "Imerys BZF"], ["pgb", "PGB Premix"], ["yeast", "Extra Yeast"]] },
       { t: "h", x: "Feed quality" },
       { t: "list", items: [
         "Maize below 14% moisture, stored in a dry ventilated place to prevent mould.",

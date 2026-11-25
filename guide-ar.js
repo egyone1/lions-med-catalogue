@@ -401,7 +401,7 @@ window.GUIDE.ar = {
         ["الصبغات", "لون صفار البيض", "كانثازانثين، مستخلص البابريكا، الكاروتينويدات"],
         ["الأملاح ومضادات الإجهاد", "الحر والإجهاد", "بيتايين، بيكربونات، بوتاسيوم كلوريد، فيتامين C"]
       ]},
-      { t: "prod", x: "منتجات Lions Med في الإضافات:", items: [["emistop", "Emistop Premix Vet"], ["madumix", "Madumix Vet"], ["echomos", "Echomos"], ["imerys", "Imerys BZF"], ["pgb", "PGB Premix"], ["yeast", "Extra Yeast"]] },
+      { t: "prod", x: "منتجات Birds Med (BMC) في الإضافات:", items: [["emistop", "Emistop Premix Vet"], ["madumix", "Madumix Vet"], ["echomos", "Echomos"], ["imerys", "Imerys BZF"], ["pgb", "PGB Premix"], ["yeast", "Extra Yeast"]] },
       { t: "h", x: "جودة العلف" },
       { t: "list", items: [
         "رطوبة الذرة أقل من 14%، والتخزين في مكان جاف ومهوّى لمنع العفن.",

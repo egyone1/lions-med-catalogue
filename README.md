@@ -1,4 +1,4 @@
-# Lions Med Company — Catalogue 2026
+# Birds Med Company (BMC) — Catalogue 2026
 
 Bilingual (English / Arabic) product site, published with GitHub Pages:
 https://egyone1.github.io/lions-med-catalogue/

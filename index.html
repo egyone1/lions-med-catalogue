@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lions Med Company — Poultry Health & Nutrition</title>
-  <meta name="description" content="Lions Med Company — anticoccidials, gut-health actives and mineral feed additives for poultry. Emistop Premix Vet, Madumix Vet, Echomos, Imerys BZF, PGB Premix, Extra Yeast. Mansoura, Egypt.">
-  <meta property="og:title" content="Lions Med Company — Product Catalogue 2026">
+  <title>Birds Med Company (BMC) — Poultry Health & Nutrition</title>
+  <meta name="description" content="Birds Med Company (BMC) — anticoccidials, gut-health actives and mineral feed additives for poultry. Emistop Premix Vet, Madumix Vet, Echomos, Imerys BZF, PGB Premix, Extra Yeast. Mansoura, Egypt.">
+  <meta property="og:title" content="Birds Med Company (BMC) — Product Catalogue 2026">
   <meta property="og:description" content="Anticoccidials, gut-health actives and mineral feed additives for poultry.">
-  <meta property="og:image" content="https://egyone1.github.io/lions-med-catalogue/assets/hero.jpg">
+  <meta property="og:image" content="https://egyone1.github.io/lions-med-catalogue/assets/og.jpg">
+  <link rel="icon" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#0d1b2e">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Montserrat:wght@200;300;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --navy: #0d1b2e; --navy-2: #16263f; --navy-3: #1c273a;
@@ -31,14 +34,25 @@
     /* header */
     header { position: sticky; top: 0; z-index: 10; background: var(--navy); color: #fff; border-bottom: 3px solid var(--gold); }
     .bar { display: flex; align-items: center; gap: 16px; min-height: 60px; }
-    .brand { font-weight: 700; font-size: 1.1rem; text-decoration: none; white-space: nowrap; letter-spacing: .02em; }
-    .brand span { color: var(--gold); }
+    .brand { display: inline-flex; align-items: center; gap: 9px; font-family: Montserrat, Poppins, Arial, sans-serif; font-weight: 800; font-size: 1.12rem; text-decoration: none; white-space: nowrap; letter-spacing: .04em; direction: ltr; }
+    .brand span { color: var(--gold); font-weight: 300; letter-spacing: .14em; }
+    .brand .emb { width: 24px; height: 28px; color: var(--gold); flex: none; }
+    @media (max-width: 390px) { .brand span { display: none; } }
+    .hero-media { position: relative; }
+    .hero-logo { position: absolute; left: 50%; top: 57%; transform: translate(-50%, -50%); width: max-content; max-width: 94%; color: #fff; font-family: Montserrat, Arial, sans-serif; direction: ltr; text-align: left; text-shadow: 0 2px 18px rgba(0,0,0,.35); pointer-events: none; }
+    .hl-top { display: flex; align-items: center; gap: .18em; font-size: clamp(2.5rem, 10.6vw, 7rem); line-height: 1; }
+    .hl-top .emb { width: .78em; height: .92em; flex: none; margin-right: .06em; }
+    .hl-b { font-weight: 800; letter-spacing: .01em; }
+    .hl-m { font-weight: 200; letter-spacing: .03em; margin-left: .16em; position: relative; }
+    .hl-m i { font-style: normal; font-weight: 300; color: var(--gold); position: absolute; top: -.18em; right: -.42em; font-size: .5em; }
+    .hl-c { display: flex; justify-content: space-between; font-weight: 300; font-size: clamp(1.05rem, 4.5vw, 2.95rem); margin-top: .42em; padding: 0 .02em; }
     nav { display: flex; gap: 22px; margin-inline-start: auto; }
     nav a { text-decoration: none; font-size: .92rem; opacity: .85; }
     nav a:hover { opacity: 1; color: var(--gold); }
     .lang { margin-inline-start: 8px; background: none; border: 1px solid var(--gold); color: var(--gold); border-radius: 6px; padding: 6px 12px; font: inherit; font-size: .88rem; font-weight: 600; cursor: pointer; }
     .lang:hover { background: var(--gold); color: var(--navy); }
     @media (max-width: 760px) {
+      .brand { font-size: .92rem; gap: 7px; } .brand span { letter-spacing: .06em; } .brand .emb { width: 20px; height: 24px; }
       .bar { flex-wrap: wrap; row-gap: 0; min-height: 0; padding-top: 10px; }
       .lang { margin-inline-start: auto; }
       nav { order: 3; width: 100%; margin: 10px 0 0; padding: 9px 0 10px; gap: 22px; overflow-x: auto; white-space: nowrap; border-top: 1px solid rgba(255,255,255,.14); scrollbar-width: none; }
@@ -319,13 +333,13 @@
 <body>
   <header>
     <div class="wrap bar">
-      <a class="brand" href="#/">LIONS MED <span>COMPANY</span></a>
+      <a class="brand" href="#/" aria-label="Birds Med Company"><svg class="emb" viewBox="0 0 48 56" aria-hidden="true"><path d="M24 3 44 10v17c0 13.5-8.6 22.6-20 26C12.6 49.6 4 40.5 4 27V10z" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/><text x="24" y="33.5" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="12.5" letter-spacing=".3" fill="currentColor">BMC</text></svg>BIRDS MED <span>COMPANY</span></a>
       <nav id="nav"></nav>
       <button class="lang" id="lang" type="button"></button>
     </div>
   </header>
   <main id="app"></main>
-  <noscript><div class="wrap" style="padding:40px 20px"><a href="catalogue.html">Open the product catalogue</a></div></noscript>
+  <noscript><div class="wrap" style="padding:40px 20px">Birds Med Company (BMC) — please enable JavaScript to view the catalogue.</div></noscript>
   <footer><div class="wrap" id="foot"></div></footer>
   <a class="fab" id="fab" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.500 1.700 6.500L3 29l6.700-1.700c1.900 1 4.100 1.600 6.300 1.600 7.200 0 13-5.800 13-13S23.200 3 16 3zm0 23.600c-2 0-3.900-.5-5.600-1.500l-.4-.2-4 1 1.100-3.900-.3-.4c-1.100-1.700-1.600-3.600-1.600-5.600C5.200 10 10 5.200 16 5.200S26.800 10 26.800 16 22 26.600 16 26.600zm5.900-8c-.3-.2-1.900-.9-2.200-1-.3-.1-.5-.2-.7.2-.2.300-.800 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.400-.5-2.600-1.600-1-.9-1.600-1.900-1.800-2.300-.2-.3 0-.5.100-.7.100-.1.300-.4.500-.6.200-.2.200-.3.300-.5.100-.2.100-.4 0-.6-.1-.2-.7-1.800-1-2.400-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.100-.9.400-.3.300-1.200 1.100-1.200 2.800s1.200 3.200 1.400 3.500c.2.200 2.400 3.700 5.800 5.100.8.400 1.400.600 1.900.700.800.300 1.500.200 2.100.100.600-.1 1.900-.800 2.200-1.500.300-.8.300-1.400.200-1.500-.1-.2-.3-.3-.6-.4z"/></svg></a>
 
@@ -338,7 +352,7 @@ const WA_ICON = document.querySelector('#fab svg').outerHTML;
 
 const UI = {
   en: {
-    other: 'العربية', title: 'Lions Med Company — Poultry Health & Nutrition',
+    other: 'العربية', title: 'Birds Med Company (BMC) — Poultry Health & Nutrition',
     nav: [['#guide', 'Farmer’s guide'], ['#products', 'Products'], ['#feed', 'Poultry feed'], ['#partners', 'Partners'], ['#contact', 'Contact']],
     eyebrow: 'Poultry Health & Nutrition', h1a: 'Product', h1b: 'Catalogue',
     lead: 'Anticoccidials, gut-health actives and mineral feed additives, formulated for performance across the production cycle.',
@@ -367,11 +381,11 @@ const UI = {
     contactH: 'Contact us', tel: 'Tel', waT: 'WhatsApp', addrT: 'Address', addr: 'Mansoura, Gamaa District',
     disclaimer: 'General information only. Always follow product labels, local regulations and veterinary advice.',
     vet: 'For veterinary use only', print: 'View print catalogue', back: '← All products',
-    admin: 'Dosage & administration', ask: 'Ask about this product', distributed: 'Distributed by Lions Med Company',
+    admin: 'Dosage & administration', ask: 'Ask about this product', distributed: 'Distributed by Birds Med Company (BMC)',
     waMsg: 'Hello, I would like to ask about '
   },
   ar: {
-    other: 'English', title: 'شركة ليونز ميد — صحة وتغذية الدواجن',
+    other: 'English', title: 'شركة بيردز ميد (BMC) — صحة وتغذية الدواجن',
     nav: [['#guide', 'دليل المربي'], ['#products', 'المنتجات'], ['#feed', 'علف الدواجن'], ['#partners', 'الشركاء'], ['#contact', 'تواصل معنا']],
     eyebrow: 'صحة وتغذية الدواجن', h1a: 'كتالوج', h1b: 'المنتجات',
     lead: 'مضادات الكوكسيديا ومواد دعم صحة الأمعاء والإضافات العلفية المعدنية، مُركَّبة لتحقيق أفضل أداء على مدار دورة الإنتاج.',
@@ -400,7 +414,7 @@ const UI = {
     contactH: 'تواصل معنا', tel: 'تليفون', waT: 'واتساب', addrT: 'العنوان', addr: 'المنصورة، حي الجامعة',
     disclaimer: 'معلومات عامة فقط. يجب دائمًا اتباع بيانات العبوة واللوائح المحلية وتعليمات الطبيب البيطري.',
     vet: 'للاستعمال البيطري فقط', print: 'عرض الكتالوج المطبوع', back: 'كل المنتجات →',
-    admin: 'الجرعة وطريقة الاستخدام', ask: 'استفسر عن هذا المنتج', distributed: 'توزيع شركة ليونز ميد',
+    admin: 'الجرعة وطريقة الاستخدام', ask: 'استفسر عن هذا المنتج', distributed: 'توزيع شركة بيردز ميد (BMC)',
     waMsg: 'مرحبًا، أريد الاستفسار عن '
   }
 };
@@ -551,7 +565,10 @@ function card(id, t) {
 function home(t) {
   return `
   <div class="hero">
-    <img class="hero-img" src="assets/hero.jpg" alt="Lions Med Company" width="1191" height="1040" fetchpriority="high">
+    <div class="hero-media">
+      <img class="hero-img" src="assets/hero.jpg" alt="" width="1191" height="1040" fetchpriority="high">
+      <div class="hero-logo" role="img" aria-label="Birds Med Company — BMC"><div class="hl-top"><svg class="emb" viewBox="0 0 48 56" aria-hidden="true"><path d="M24 3 44 10v17c0 13.5-8.6 22.6-20 26C12.6 49.6 4 40.5 4 27V10z" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linejoin="round"/><text x="24" y="33.5" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-weight="800" font-size="12.5" letter-spacing=".3" fill="currentColor">BMC</text></svg><span class="hl-b">BIRDS</span><span class="hl-m">MED<i>+</i></span></div><div class="hl-c"><span>C</span><span>O</span><span>M</span><span>P</span><span>A</span><span>N</span><span>Y</span></div></div>
+    </div>
     <div class="wrap hero-body">
       <div class="eyebrow">${t.eyebrow}</div>
       <h1>${t.h1a}<em>${t.h1b}</em></h1>
@@ -594,7 +611,7 @@ function home(t) {
 
 function contact(t) {
   return `<section class="dark" id="contact"><div class="wrap">
-    <div class="sec-head"><h2>${t.contactH}</h2><span class="eyebrow">Lions Med Company</span></div>
+    <div class="sec-head"><h2>${t.contactH}</h2><span class="eyebrow">Birds Med Company · BMC</span></div>
     <div class="contact">
       <div class="tile"><div class="eyebrow">${t.tel}</div><a href="tel:+${TEL_INTL}">${TEL}</a></div>
       <div class="tile"><div class="eyebrow">${t.waT}</div><a href="${wa()}" target="_blank" rel="noopener">${TEL}</a></div>
@@ -932,12 +949,12 @@ function render(e) {
   const id = m && P[m[1]] ? m[1] : null;
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  document.title = id ? P[id].name + ' — Lions Med Company' : t.title;
+  document.title = id ? P[id].name + ' — Birds Med Company' : t.title;
   document.getElementById('nav').innerHTML = t.nav.map(n => `<a href="${n[0]}">${n[1]}</a>`).join('');
   document.getElementById('lang').textContent = t.other;
   document.getElementById('fab').href = wa();
   document.getElementById('fab').setAttribute('aria-label', t.waT);
-  document.getElementById('foot').innerHTML = `<span>${t.disclaimer}</span><span>${t.vet} · ${t.edition} · <a href="catalogue.html">${t.print}</a></span>`;
+  document.getElementById('foot').innerHTML = `<span>${t.disclaimer}</span><span>${t.vet} · ${t.edition}</span>`;
   const gm = h.match(/^#\/guide\/([a-z]+)$/);
   const key = lang + ':' + (id || 'home');
   if (key === shown && e) { if (gm) setTab(gm[1], true); return; }
